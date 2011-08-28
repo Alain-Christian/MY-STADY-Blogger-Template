@@ -769,11 +769,28 @@ border:none;
 	<div class='article'>
 				<h1 class='error'>Yeah...We didn't find it.</h1>
 
-		<div class='content'><p>Blogger's built-in search engine is pretty lousy. As far as we can tell only the most recent posts are cached. How lame is that? Not worries, just <a expr:href='"http://www.google.com/search?sitesearch=mystady.com&amp;q=" + data:blog.searchQuery'>try your search again on Google.</a> They have more of our pages indexed. If that doesn't work <a href="http://mystady.com/p/contact-us.html">send us an email</a> and we'll look into the matter.</p><br /><p><a expr:href='"http://www.google.com/search?sitesearch=mystady.com&amp;q=" + data:blog.searchQuery'>» <b>Search MY STADY for <data:blog.searchQuery/> using Google.</b></a></p>
+		<div class='content'><p>Blogger's built-in search engine is pretty lousy. As far as we can tell only the most recent posts are cached. How lame is that? Not worries, just <a expr:href='"http://www.google.com/search?sitesearch=mystady.com&amp;q=" + data:blog.searchQuery'>try your search again on Google.</a> They have more of our pages indexed. If that doesn't work <a href="http://mystady.com/p/contact-us.html">send us an email</a> and we'll look into the matter.</p><br /><p><a expr:href='"http://www.google.com/search?sitesearch=mystady.com&amp;q=" + data:blog.searchQuery'>» <b>Search MY STADY for <em><data:blog.searchQuery/></em> using Google.</b></a></p>
 		</div>
 	</div>
 		</b:if >
 			</b:if>
+
+			<b:if cond='data:blog.searchLabel'>
+
+		<b:if cond='data:olderPageUrl == data:newerPageUrl'>
+	<div class='article'>
+				<h1 class='error'>DON'T PANIC</h1>
+
+		<div class='content'><p>Apparently the page you're looking for doesn't exist. Or maybe it once existed but has since ceased to be. Or maybe you typed some gibberish to see what happens, jerk! Anyhoo, we don't have any content filed under <em><data:blog.searchLabel/></em>. You might have better luck <a expr:href='"http://mystady.com/search?q=" + data:blog.searchLabel'>searching for <em><data:blog.searchLabel/></em></a>.</p><br />
+			<p><a expr:href='"http://mystady.com/search?q=" + data:blog.searchLabel'>» <b>Search MY STADY for <em><data:blog.searchLabel/></em>.</b></a></p>
+		</div>
+	</div>
+		</b:if >
+			</b:if>
+
+
+
+
 
 
 
