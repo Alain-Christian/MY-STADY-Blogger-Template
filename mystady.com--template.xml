@@ -686,6 +686,7 @@ border:none;
 		</b:loop>
 		<li><a onclick="window.open(&quot;http://www.blogger.com/follow-blog.g?blogID=4529442105479101205&quot;, &quot;followblog&quot;, &quot;height=600, width=600, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no&quot; );">Follow</a></li>
 		<li><a href='http://feeds.mystady.com/mystady'>RSS</a></li>
+		<li><a href='http://feedburner.google.com/fb/a/mailverify?uri=mystady&amp;loc=en_US' rel='nofollow'>Subscribe</a></li>
 	</ul>
 </b:includable>
 </b:widget>
@@ -1201,7 +1202,7 @@ border:none;
 	<ul>
 		<li>
 			<form action='http://mystady.com/search' method='get' onSubmit='this.submit();return false;'>
-				<input type='text' name='q' /><input type='submit'/>
+				<input type='text' name='q' /><input type='submit' value="Search" />
 			</form>
 		</li>
 	</ul>
@@ -1461,21 +1462,6 @@ border:none;
 </b:section>
 
 <b:section id='lost' showaddelement='yes' growth='vertical'>
-<b:widget id='FollowByEmail1' locked='false' title='Follow by Email' type='FollowByEmail'>
-<b:includable id='main'>
-	<b:if cond='data:title'><h3><data:title/></h3></b:if>
-<ul>
-	<li>
-	<form action='http://feedburner.google.com/fb/a/mailverify' expr:onsubmit='&quot;window.open(\&quot;http://feedburner.google.com/fb/a/mailverify?uri=&quot; + data:feedPath + &quot;\&quot;, \&quot;popupwindow\&quot;, \&quot;scrollbars=yes,width=550,height=520\&quot;); return true&quot;' method='post' target='popupwindow'>
-		<input class='follow-by-email-address' name='email' placeholder='Email address...' type='text'/>
-		<input class='follow-by-email-submit' type='submit' value='Go!'/>
-		<input expr:value='data:feedPath' name='uri' type='hidden'/>
-		<input name='loc' type='hidden' value='en_US'/>
-	</form>
-</li>
-</ul>
-</b:includable>
-</b:widget>
 </b:section>
 
 
