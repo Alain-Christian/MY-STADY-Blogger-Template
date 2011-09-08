@@ -189,7 +189,7 @@ a:hover {
 color:$DefaultLinkHvC !important;
 cursor:pointer;
 }
-a:link, a:visited {
+a:link, a:visited, a[onclick] {
 color:$DefaultLink__C;
 cursor:pointer;
 }
@@ -1167,10 +1167,28 @@ border:none;
 <b:includable id='page_navigation'>
 	<div class='page-navigator'>
 		<b:if cond='data:olderPageUrl'>
-			<a class='older' expr:href='data:olderPageUrl' expr:title='data:olderPageTitle'>&#171; <data:olderPageTitle/></a>
+			<b:if cond="data:blog.searchLabel">
+				<b:loop index='i' values='data:posts' var='post'>
+					<b:if cond='data:i == "19"'>
+						<a class='older' expr:href='data:olderPageUrl' expr:title='data:olderPageTitle'>&#171; <data:olderPageTitle/></a>
+					</b:if>
+				</b:loop>
+			<b:else/>
+				<a class='older' expr:href='data:olderPageUrl' expr:title='data:olderPageTitle'>&#171; <data:olderPageTitle/></a>
+			</b:if>
 		</b:if>
 		<b:if cond='data:newerPageUrl'>
-			<b:if cond='data:blog.url != "http://mystady.com/search/label/" + data:blog.searchLabel'>
+			<b:if cond="data:blog.searchLabel">
+				<b:if cond='data:blog.url != "http://mystady.com/search/label/" + data:blog.searchLabel'>
+					<b:if cond='data:blog.url != "http://mystady.com/search/label/New%20York%20City"'>
+						<b:if cond='data:blog.url != "http://mystady.com/search/label/Fanservice%20Friday"'>
+							<b:if cond='data:blog.url != "http://mystady.com/search/label/The%20Internet"'>
+								<a class="newer" onclick="window.history.go(-1);" expr:title="data:newerPageTitle"><data:newerPageTitle/> &#187;</a>
+							</b:if>
+						</b:if>
+					</b:if>
+				</b:if>
+			<b:else/>
 				<a class="newer" expr:href="data:newerPageUrl" expr:title="data:newerPageTitle"><data:newerPageTitle/> &#187;</a>
 			</b:if>
 		</b:if>
