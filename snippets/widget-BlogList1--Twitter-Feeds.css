@@ -1,0 +1,17 @@
+/*
+<Variable name="FooterBlogLBdC" description="Footer Blog List Border Color" type="color" default="#666666"/>
+<Variable name="FooterBlogLisF" description="Footer Blog List Font" type="font" default="normal normal 70% Verdana, sans-serif"/>
+*/
+
+/*------------------------------------------------------------ Footer Widgets */
+#footer .BlogList .twitter-avatar {
+float:$startSide;
+margin:0 .5em 0 0;
+}
+#footer .BlogList li {
+border-bottom:1px dashed $FooterBlogLBdC;
+padding:0 0 .5em 0;
+}
+#footer .BlogList ul {
+font:$FooterBlogLisF;
+}

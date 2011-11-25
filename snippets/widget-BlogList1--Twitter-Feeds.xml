@@ -1,0 +1,29 @@
+<b:widget id='BlogList1' locked='false' title='Twitter Feeds' type='BlogList'>
+<b:includable id='main'>
+<!-- Begin Twitter -->
+	<b:if cond='data:title != &quot;&quot;'><h3><data:title/></h3></b:if>
+	<ul>
+		<b:loop values='data:items' var='item'>
+			<li>
+<!--Avatars must be manually added because by default the widget displays Twitter's favicon for all feeds.-->
+				<b:if cond='data:showIcon == "true"'>
+					<span class='twitter-avatar'>
+						<b:if cond='data:item.blogUrl == "http://twitter.com/alainchristian"'>
+							<a expr:href='data:item.blogUrl'><img src='http://a1.twimg.com/profile_images/651915356/20242_1193403481185_1411361561_30444027_2412693_n_mini.jpg' width='24' height='24'/></a>
+						</b:if>
+						<b:if cond='data:item.blogUrl == "http://twitter.com/FallenDuality"'>
+							<a expr:href='data:item.blogUrl'><img src='http://a1.twimg.com/profile_images/139713858/l_1cac9d8d473d41839431ec46f6b1c9b3_mini.jpg' width='24' height='24'/></a>
+						</b:if>
+						<b:if cond='data:item.blogUrl == "http://twitter.com/slowpoke95"'>
+							<a expr:href='data:item.blogUrl'><img src='http://a3.twimg.com/profile_images/258157918/slowpoke_twitter_mini.png' width='24' height='24'/></a>
+						</b:if>
+					</span>
+				</b:if>
+				<b:if cond='data:showItemTitle == "true"'><data:item.itemTitle/></b:if>
+				<b:if cond='data:showTimePeriodSinceLastUpdate == "true"'><a expr:href='data:item.itemUrl'><data:item.timePeriodSinceLastUpdate/></a></b:if>
+				<div class='clear'/>
+			</li>
+		</b:loop>
+	</ul>
+</b:includable>
+</b:widget>

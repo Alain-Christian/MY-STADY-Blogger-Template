@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html expr:dir="data:blog.languageDirection" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html expr:dir="data:blog.languageDirection" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
 <head profile="http://a9.com/-/spec/opensearch/1.1/">
 <b:if cond="data:blog.pageType == &#34;archive&#34;">
 <!--Archive Page-->
@@ -81,6 +81,7 @@
 <meta property="fb:admins" content="1411361561" />
 <meta property="fb:app_id" content="198892600172252" />
 <link rel="search" type="application/opensearchdescription+xml" title="MY STADY" href="http://dl.mystady.com/browser/opensearch-MY-STADY-mystady.com.xml" />
+<link href="https://plus.google.com/101953722413647768451" rel="publisher" />
 <b:skin><![CDATA[/*
 -----------------------------------------------
 Blogger Template Style
@@ -135,8 +136,6 @@ Last Update: 5.11.2011
 <Variable name="FooterContentF" description="Footer Content Font" type="font" default="normal normal 101% Trebuchet, Trebuchet MS, Arial, sans-serif"/>
 <Variable name="FooterWidgeTiF" description="Footer Widget Title Font" type="font" default="normal normal 180% Trebuchet, Trebuchet MS, Arial, sans-serif"/>
 <Variable name="FooterWidgeTiC" description="Footer Widget Title Color" type="Color" default="#999999"/>
-<Variable name="FooterBlogLisF" description="Footer Blog List Font" type="font" default="normal normal 70% Verdana, sans-serif"/>
-<Variable name="FooterBlogLBdC" description="Footer Blog List Border Color" type="color" default="#666666"/>
 */
 /* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
@@ -208,13 +207,24 @@ padding:.5em;
 }
 /*-------------------------------------------------------------------- Navbar */
 #navbar-iframe {height:0px;visibility:hidden;display:none}
+/*------------------------------------------------------------ Social Plugins */
+#___plus_0 {
+margin:5em auto 0 auto !important;
+}
+.fb_iframe_widget {
+border:1px solid #dcdcdc;
+margin:.5em auto 0 auto;
+}
+#sidebar .twitter-follow-button {
+margin:.5em auto 0 auto;
+}
 /*------------------------------------------------------------ Header Widgets */
 #header {
 background:$SidebarContntC;
 }
 #header #LinkList4 p {
 color:$SidebarWidgBgC;
-font:$FooterBlogLisF;
+font:$ArticleBylineF;
 padding:1em 0 1em 0;
 text-align:center;
 }
@@ -223,7 +233,7 @@ display:inline;
 padding:.5em;
 }
 #header .PageList ul {
-font:$FooterBlogLisF;
+font:$ArticleBylineF;
 padding:1em;
 text-align:$endSide;
 }
@@ -239,17 +249,17 @@ color:$SidebarWidgBgC;
 background:$WidgetBlog1BgC;
 float:$startSide;
 overflow:hidden; /* fix for long non-text content breaking IE sidebar float */
-width:728px;
+width:710px;
 word-wrap:break-word; /* fix for long text breaking sidebar float in IE */
 }
 #outer-wrapper {
 margin:0 auto 0 auto;
-width:1000px;
+width:1024px;
 }
 #sidebar-wrapper {
 float:$endSide;
 overflow:hidden; /* fix for long non-text content breaking IE sidebar float */
-width:262px;
+width:314px;
 word-wrap:break-word; /* fix for long text breaking sidebar float in IE */
 }
 /*----------------------------------------------------------------- Slideshow */
@@ -568,6 +578,9 @@ background:$SidebarWidgBgC;
 border-bottom:1px dashed $SidebarWidgBdC;
 padding:6px;
 }
+#sidebar .widget:last-child {
+border:none;
+}
 #sidebar h3 {
 color:$SidebarContntC;
 font:$SidebarWidgTiF;
@@ -587,17 +600,6 @@ width:100%;
 font:$FooterContentF;
 line-height:2em;
 padding:0 0 0 .5em;
-}
-#footer .BlogList .twitter-avatar {
-float:$startSide;
-margin:0 .5em 0 0;
-}
-#footer .BlogList li {
-border-bottom:1px dashed $FooterBlogLBdC;
-padding:0 0 .5em 0;
-}
-#footer .BlogList ul {
-font:$FooterBlogLisF;
 }
 #footer .footer-content {
 margin:1em auto 0 auto;
@@ -1075,7 +1077,7 @@ border:none;
 				<div id='share_buttons'>
 					<a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'><span class='share-button-link-text'><data:top.emailThisMsg/></span>
 					</a><a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'><span class='share-button-link-text'><data:top.blogThisMsg/></span>
-					</a><a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span>
+					</a><a class='goog-inline-block share-button sb-twitter' expr:href='"https://twitter.com/intent/tweet?url=" + data:post.url + "&amp;via=mystady&amp;text=" + data:post.title + "&amp;related=AlainChristian&amp;counturl=" + data:post.url' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span>
 					</a><a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToFacebookMsg/></span>
 					</a><a class='goog-inline-block share-button sb-orkut' expr:href='data:post.sharePostUrl + &quot;&amp;target=orkut&quot;' expr:title='data:top.shareToOrkutMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToOrkutMsg/></span>
 					</a><a class='goog-inline-block share-button sb-buzz' expr:href='data:post.sharePostUrl + &quot;&amp;target=buzz&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=415,width=690\&quot;); return false;&quot;' expr:title='data:top.shareToBuzzMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToBuzzMsg/></span></a>
@@ -1118,7 +1120,7 @@ border:none;
 									</b:if>
 								</b:if>
 							</b:if>
-							<span class='comlinks'><b:include data='comment' name='commentDeleteIcon'/><a expr:href='data:comment.url' title='comment permalink'>#</a></span>
+							<span class='comlinks'><b:include data='comment' name='commentDeleteIcon'/><a expr:href='"#" + data:comment.anchorName' title='comment permalink'>#</a></span>
 							<div class='clear'/>
 							<data:comment.timestamp/> 
 						</div>
@@ -1378,6 +1380,15 @@ border:none;
 </b:includable>
 </b:widget>
 
+<b:widget id='Text2' locked='false' title='Social' type='Text'>
+<b:includable id='main'>
+	<b:if cond='data:title'><h3><data:title/></h3></b:if>
+<g:plus href="https://plus.google.com/101953722413647768451" size="smallbadge"></g:plus>
+<div id="fb-root"></div><fb:like-box href="http://www.facebook.com/mystady" width="298" height="69" show_faces="false" border_color="#FF0000" stream="false" header="false"></fb:like-box>
+<a href="https://twitter.com/mystady" class="twitter-follow-button">Follow @mystady</a>
+</b:includable>
+</b:widget>
+
 
 
 
@@ -1432,35 +1443,6 @@ border:none;
 </b:section>
 
 <b:section id='thegame' showaddelement='yes' growth='vertical'>
-<b:widget id='BlogList1' locked='false' title='Twitter Feeds' type='BlogList'>
-<b:includable id='main'>
-<!-- Begin Twitter -->
-	<b:if cond='data:title != &quot;&quot;'><h3><data:title/></h3></b:if>
-	<ul>
-		<b:loop values='data:items' var='item'>
-			<li>
-<!--Avatars must be manually added because by default the widget displays Twitter's favicon for all feeds.-->
-				<b:if cond='data:showIcon == "true"'>
-					<span class='twitter-avatar'>
-						<b:if cond='data:item.blogUrl == "http://twitter.com/alainchristian"'>
-							<a expr:href='data:item.blogUrl'><img src='http://a1.twimg.com/profile_images/651915356/20242_1193403481185_1411361561_30444027_2412693_n_mini.jpg' width='24' height='24'/></a>
-						</b:if>
-						<b:if cond='data:item.blogUrl == "http://twitter.com/FallenDuality"'>
-							<a expr:href='data:item.blogUrl'><img src='http://a1.twimg.com/profile_images/139713858/l_1cac9d8d473d41839431ec46f6b1c9b3_mini.jpg' width='24' height='24'/></a>
-						</b:if>
-						<b:if cond='data:item.blogUrl == "http://twitter.com/slowpoke95"'>
-							<a expr:href='data:item.blogUrl'><img src='http://a3.twimg.com/profile_images/258157918/slowpoke_twitter_mini.png' width='24' height='24'/></a>
-						</b:if>
-					</span>
-				</b:if>
-				<b:if cond='data:showItemTitle == "true"'><data:item.itemTitle/></b:if>
-				<b:if cond='data:showTimePeriodSinceLastUpdate == "true"'><a expr:href='data:item.itemUrl'><data:item.timePeriodSinceLastUpdate/></a></b:if>
-				<div class='clear'/>
-			</li>
-		</b:loop>
-	</ul>
-</b:includable>
-</b:widget>
 </b:section>
 
 <b:section id='lost' showaddelement='yes' growth='vertical'>
@@ -1482,8 +1464,7 @@ border:none;
 
 
 
-<b:if cond="data:blog.pageType == &#34;item&#34;">
-<!--Plus One for Item Pages-->
+<!--Plus One-->
 <script type="text/javascript">
   (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
@@ -1491,7 +1472,14 @@ border:none;
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
-</b:if>
+<!--Facebook-->
+<script type="text/javascript">
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=198892600172252"; fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<!--Twitter-->
+<script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
 
 
 
