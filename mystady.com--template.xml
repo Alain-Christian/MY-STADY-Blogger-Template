@@ -52,11 +52,11 @@
 <title><data:blog.pageName/> | <data:blog.title/></title>
 <meta property="og:title" expr:content="data:blog.pageName" />
 <meta property="og:type" content="article" />
-<script type="text/javascript" src="http://www.google.com/jsapi" />
+<script type="text/javascript" src="http://www.google.com/jsapi"></script>
 <script type="text/javascript">google.load("swfobject", "2.2");var nr_domain = "<data:blog.homepageUrl/>";var nr_pageurl = "<data:blog.url/>";var nr_keywords= "encodeURI(document.title)";var nr_sourcehp = false;</script>
 <script type="text/javascript">swfobject.registerObject("video1", "9.0.124");</script>
-<script type="text/javascript" src="http://static.nrelate.com/rcw_b/0.04.0/loader.min.js" />
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js" />
+<script type="text/javascript" src="http://static.nrelate.com/rcw_b/0.04.0/loader.min.js"></script>
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
 <b:if cond="data:blog.url == &#34;http://mystady.com/2010/01/one-piece-434-thats-so-gross.html&#34;">
 <meta property="og:description" name="description" content="On One Piece everybody cries! Except for this time. Here we have Chief Warden Magellan taking a wicked shit without warning in front of Vice-WardenHannyabal Vice-Warden. See, Megallan’s devil fruit powers make him immune to poison. So he eats poisonous food to make him stronger–I think. But these poisonous foods give him crippling diarrhea. Read: he spends ten hours a day on the toilet!" />
 <meta property="og:image" content="http://v.mystady.com/OP-434.png" />
@@ -75,7 +75,6 @@
 <b:include data="blog" name="all-head-content" />
 <meta property="og:site_name" expr:content="data:blog.title" />
 <meta property="og:url" expr:content="data:blog.url" />
-<meta name="bitly-verification" content="60c070985bba"/>
 <meta name="msvalidate.01" content="6A3E67DD8722BD0093FF89E63F7536D8" />
 <META name="y_key" content="f2e47db906498f61" />
 <meta property="fb:admins" content="1411361561" />
@@ -1077,7 +1076,7 @@ border:none;
 				<div id='share_buttons'>
 					<a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'><span class='share-button-link-text'><data:top.emailThisMsg/></span>
 					</a><a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'><span class='share-button-link-text'><data:top.blogThisMsg/></span>
-					</a><a class='goog-inline-block share-button sb-twitter' expr:href='"https://twitter.com/intent/tweet?url=" + data:post.url + "&amp;via=mystady&amp;text=" + data:post.title + "&amp;related=AlainChristian&amp;counturl=" + data:post.url' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span>
+					</a><a class='goog-inline-block share-button sb-twitter' expr:href='"https://twitter.com/intent/tweet?url=" + data:post.url + "&amp;via=mystady&amp;text=" + data:post.title + "&amp;related=AnimeOnHulu:Our+side+project.,slowpoke95:Part-time+MY+STADY+contributor,AlainChristian:MY+STADY+staff.,FallenDuality:MY+STADY+staff.&amp;counturl=" + data:post.url' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span>
 					</a><a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToFacebookMsg/></span>
 					</a><a class='goog-inline-block share-button sb-orkut' expr:href='data:post.sharePostUrl + &quot;&amp;target=orkut&quot;' expr:title='data:top.shareToOrkutMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToOrkutMsg/></span>
 					</a><a class='goog-inline-block share-button sb-buzz' expr:href='data:post.sharePostUrl + &quot;&amp;target=buzz&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=415,width=690\&quot;); return false;&quot;' expr:title='data:top.shareToBuzzMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToBuzzMsg/></span></a>
@@ -1389,6 +1388,23 @@ border:none;
 </b:includable>
 </b:widget>
 
+<b:widget id='Gadget1' locked='false' title='Tip Jar' type='Gadget'>
+<b:includable id='main'>  
+	<b:if cond='data:renderingUrl != &quot;&quot;'>
+		<b:if cond='data:title'><h3><data:title/></h3></b:if>
+		<b:if cond='data:gadgetSnippet != &quot;&quot;'>
+			<data:gadgetSnippet/>
+		<b:else/>
+			<b:if cond='data:nonSocialFragment != &quot;&quot;'>
+				<data:nonSocialFragment/>
+			</b:if>
+		</b:if>
+	<b:else/>
+		<data:errorMessage/>
+	</b:if>
+</b:includable>
+</b:widget>
+
 
 
 
@@ -1464,7 +1480,7 @@ border:none;
 
 
 
-<!--Plus One-->
+<!--Google Plus-->
 <script type="text/javascript">
   (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
