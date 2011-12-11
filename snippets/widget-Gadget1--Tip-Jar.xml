@@ -1,0 +1,23 @@
+<b:widget id='Gadget1' locked='false' title='Tip Jar' type='Gadget'>
+<b:includable id='main'>  
+  <!-- only display title if it's non-empty -->
+  <b:if cond='data:renderingUrl != &quot;&quot;'>
+    <b:if cond='data:title != &quot;&quot;'>
+      <h2 class='title'><data:title/></h2>
+    </b:if>
+    <b:if cond='data:gadgetSnippet != &quot;&quot;'>
+       <data:gadgetSnippet/>
+    <b:else/>
+      <div class='widget-content'>
+        <b:if cond='data:nonSocialFragment != &quot;&quot;'>
+          <data:nonSocialFragment/>
+        </b:if>
+      </div>
+    </b:if>
+  <b:else/>
+    <data:errorMessage/>
+  </b:if>
+
+  <b:include name='quickedit'/>
+</b:includable>
+</b:widget>

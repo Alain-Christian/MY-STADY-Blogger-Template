@@ -1,7 +1,7 @@
 <b:widget id='BlogList1' locked='false' title='Twitter Feeds' type='BlogList'>
 <b:includable id='main'>
 <!-- Begin Twitter -->
-	<b:if cond='data:title != &quot;&quot;'><h3><data:title/></h3></b:if>
+	<b:if cond='data:title'><h3><data:title/></h3></b:if>
 	<ul>
 		<b:loop values='data:items' var='item'>
 			<li>
