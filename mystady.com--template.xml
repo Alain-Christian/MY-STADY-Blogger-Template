@@ -929,7 +929,7 @@ border:none;
 		</span>
 		<h2><a expr:href='data:post.url' rel='bookmark' title='Permanent Link' expr:id='data:post.id'><data:post.title/></a></h2>
 		<div class='byline'>
-			<abbr expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr> <data:top.timestampLabel/> <a rel='author' expr:href='"http://mystady.com/p/about.html#" + data:post.author'><data:post.author/></a>
+			<abbr expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr> <data:top.timestampLabel/> <b:include name='PostAuthorTweak' data='post'/>
 		</div>
 		<data:post.snippet/> <a expr:href='data:post.url' expr:title='"Continue reading" + data:post.title'>Continue Reading »</a>
 	</div>
@@ -968,7 +968,7 @@ border:none;
 					</b:if>
 				</span>
 			</b:if>
-			<abbr expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr> <data:top.timestampLabel/> <a rel='author' expr:href='"http://mystady.com/p/about.html#" + data:post.author'><data:post.author/></a>
+			<abbr expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr> <data:top.timestampLabel/> <b:include name='PostAuthorTweak' data='post'/>
 			<span expr:class='"item-control " + data:post.adminClass'>
 				<b:if cond='data:post.editUrl'><a expr:href='data:post.editUrl' expr:title='data:top.editPostMsg' target='_blank'>+</a></b:if>
 				<a expr:href='data:post.url + "#links"' expr:title='data:top.backlinkLabel'><data:post.numBacklinks/></a> 
@@ -1106,19 +1106,7 @@ border:none;
 					<div class='content'>
 <!--Comment Header-->
 						<div class='header'>
-							<b:if cond='data:comment.authorUrl == "http://www.blogger.com/profile/17782443978544199362"'>
-								<span class='author'><a href='http://mystady.com/p/about.html#Alain-Christian'><data:comment.author/></a></span>
-								<b:else/>
-								<b:if cond='data:comment.authorUrl == "http://www.blogger.com/profile/04384568305404214594"'>
-									<span class='author'><a href='http://mystady.com/p/about.html#Fallenduality'><data:comment.author/></a></span>
-									<b:else/>
-									<b:if cond='data:comment.authorUrl'>
-										<span class='author'><a expr:href='data:comment.authorUrl' rel='nofollow'><data:comment.author/></a></span>
-										<b:else/>
-										<span class='author'><data:comment.author/></span>
-									</b:if>
-								</b:if>
-							</b:if>
+							<b:include name='CommentAuthorTweak' data='comment'/>
 							<span class='comlinks'><b:include data='comment' name='commentDeleteIcon'/><a expr:href='"#" + data:comment.anchorName' title='comment permalink'>#</a></span>
 							<div class='clear'/>
 							<data:comment.timestamp/> 
@@ -1179,6 +1167,24 @@ border:none;
 		</b:if>
 	</div>
 </b:includable>
+
+<b:includable id='PostAuthorTweak' var='data'>
+	<b:if cond='data:data.authorUrl == "http://www.blogger.com/profile/17782443978544199362"'>
+		<a rel='author' href='http://mystady.com/p/about.html#Alain-Christian'>Alain-Christian</a>
+		<b:else/>
+			<b:if cond='data:data.authorUrl == "http://www.blogger.com/profile/04384568305404214594"'>
+				<a rel='author' href='http://mystady.com/p/about.html#Fallenduality'>Fallenduality</a>
+				<b:else/>
+<data:data.author/></b:if></b:if></b:includable>
+
+<b:includable id='CommentAuthorTweak' var='data'>
+	<b:if cond='data:data.authorUrl == "http://www.blogger.com/profile/17782443978544199362"'>
+		<a class='author' href='http://mystady.com/p/about.html#Alain-Christian'>Alain-Christian</a>
+		<b:else/>
+			<b:if cond='data:data.authorUrl == "http://www.blogger.com/profile/04384568305404214594"'>
+				<a class='author' href='http://mystady.com/p/about.html#Fallenduality'>Fallenduality</a>
+				<b:else/>
+<a class='author' expr:href='data:data.authorUrl'><data:data.author/></a></b:if></b:if></b:includable>
 </b:widget>
 </b:section>
 
