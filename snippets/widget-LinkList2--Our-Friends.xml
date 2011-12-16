@@ -1,0 +1,7 @@
+<b:widget id='LinkList2' locked='false' title='Our Friends' type='LinkList'>
+<b:includable id='main'>
+<!--Friend Links-->
+	<b:if cond='data:title'><h3><data:title/></h3></b:if>
+	<ul><b:loop values='data:links' var='link'><li><a expr:href='data:link.target'><data:link.name/></a></li></b:loop></ul>
+</b:includable>
+</b:widget>

@@ -1,0 +1,41 @@
+<div id='footer' class='clear'>
+
+
+
+
+
+<div class='footer-content'>
+
+
+
+
+
+<b:section id='you' showaddelement='yes' growth='vertical'>
+</b:section>
+
+<b:section id='just' showaddelement='yes' growth='vertical'>
+</b:section>
+
+<b:section id='lost' showaddelement='yes' growth='vertical'>
+</b:section>
+
+<b:section id='thegame' showaddelement='yes' growth='vertical'>
+</b:section>
+
+
+
+
+
+
+</div> <!-- end footer-content -->
+
+
+
+
+
+</div> <!-- end #footer -->
+
+
+
+
+

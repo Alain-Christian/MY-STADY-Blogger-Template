@@ -1,0 +1,67 @@
+/* For reference:
+<Variable name="SidebarWidgBgC" description="Sidebar Widget Background Color" type="color" default="#FFFFFF"/>
+<Variable name="SidebarContntC" description="Sidebar Content Color" type="color" default="#000000"/>
+
+
+
+
+
+<Variable name="Footer_____BgC" description="Footer Background Color" type="color" default="#222222"/>
+<Variable name="FooterContentF" description="Footer Content Font" type="font" default="normal normal 101% Trebuchet, Trebuchet MS, Arial, sans-serif"/>
+<Variable name="FooterWidgeTiF" description="Footer Widget Title Font" type="font" default="normal normal 180% Trebuchet, Trebuchet MS, Arial, sans-serif"/>
+<Variable name="FooterWidgeTiC" description="Footer Widget Title Color" type="Color" default="#999999"/>
+*/
+
+/*------------------------------------------------------------ Footer Widgets */
+#footer {
+background:$Footer_____BgC;
+color:$SidebarWidgBgC;
+float:$startSide;
+width:100%;
+}
+#footer .BlogArchive ul, #footer .Label ul {
+font:$FooterContentF;
+line-height:2em;
+padding:0 0 0 .5em;
+}
+#footer .footer-content {
+margin:1em auto 0 auto;
+width:1000px;
+}
+#footer .Label li {
+border-bottom:2px solid $FooterWidgeTiC;
+}
+#footer .Label li img {
+vertical-align:top;
+visibility:hidden;
+}
+#footer .LinkList ul, #footer .Profile ul {
+font:$FooterContentF;
+line-height:2em;
+list-style:square;
+padding:0 0 0 1.5em;
+}
+#footer h3 {
+color:$FooterWidgeTiC;
+font:$FooterWidgeTiF;
+margin:0 0 .5em 0;
+}
+#footer input[type="text"] {
+border:2px solid $SidebarContntC;
+height:2em;
+margin:0 0 0 1.5em;
+width:68%;
+}
+#you, #just, #lost {
+float:$startSide;
+width:225px;
+}
+#thegame {
+float:$startSide;
+width:325px;
+}
+/*-------------------------------------------------- Printer-Friendly Version */
+@media print {
+#footer {
+display:none;
+}

@@ -131,10 +131,6 @@ Last Update: 5.11.2011
 <Variable name="SidebarWidgTiF" description="Sidebar Widget Title Font" type="font" default="normal bold 81% Verdana, sans-serif"/>
 <Variable name="SidebarContntF" description="Sidebar Content Font" type="font" default="normal normal 80% Verdana, sans-serif"/>
 <Variable name="SidebarContntC" description="Sidebar Content Color" type="color" default="#000000"/>
-<Variable name="Footer_____BgC" description="Footer Background Color" type="color" default="#222222"/>
-<Variable name="FooterContentF" description="Footer Content Font" type="font" default="normal normal 101% Trebuchet, Trebuchet MS, Arial, sans-serif"/>
-<Variable name="FooterWidgeTiF" description="Footer Widget Title Font" type="font" default="normal normal 180% Trebuchet, Trebuchet MS, Arial, sans-serif"/>
-<Variable name="FooterWidgeTiC" description="Footer Widget Title Color" type="Color" default="#999999"/>
 */
 /* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
@@ -617,57 +613,9 @@ font:$SidebarWidgTiF;
 border:2px solid $SidebarContntC;
 width:70%;
 }
-/*------------------------------------------------------------ Footer Widgets */
-#footer {
-background:$Footer_____BgC;
-color:$SidebarWidgBgC;
-float:$startSide;
-width:100%;
-}
-#footer .BlogArchive ul, #footer .Label ul {
-font:$FooterContentF;
-line-height:2em;
-padding:0 0 0 .5em;
-}
-#footer .footer-content {
-margin:1em auto 0 auto;
-width:1000px;
-}
-#footer .Label li {
-border-bottom:2px solid $FooterWidgeTiC;
-}
-#footer .Label li img {
-vertical-align:top;
-visibility:hidden;
-}
-#footer .LinkList ul, #footer .Profile ul {
-font:$FooterContentF;
-line-height:2em;
-list-style:square;
-padding:0 0 0 1.5em;
-}
-#footer h3 {
-color:$FooterWidgeTiC;
-font:$FooterWidgeTiF;
-margin:0 0 .5em 0;
-}
-#footer input[type="text"] {
-border:2px solid $SidebarContntC;
-height:2em;
-margin:0 0 0 1.5em;
-width:68%;
-}
-#you, #just, #lost {
-float:$startSide;
-width:225px;
-}
-#thegame {
-float:$startSide;
-width:325px;
-}
 /*-------------------------------------------------- Printer-Friendly Version */
 @media print {
-#footer, #header, #sidebar-wrapper, .e-comment-form, .jumplink, .page-navigator {
+#header, #sidebar-wrapper, .e-comment-form, .jumplink, .page-navigator {
 display:none;
 }
 #main-wrapper {
@@ -1463,53 +1411,6 @@ border:none;
 
 
 </div> <!--End outer-wrapper-->
-
-
-
-
-
-<div id='footer' class='clear'>
-
-
-
-
-
-<div class='footer-content'>
-
-
-
-
-
-<b:section id='you' showaddelement='yes' growth='vertical'>
-<b:widget id='LinkList2' locked='false' title='Our Friends' type='LinkList'>
-<b:includable id='main'>
-<!--Freind Links-->
-	<b:if cond='data:title'><h3><data:title/></h3></b:if>
-	<ul><b:loop values='data:links' var='link'><li><a expr:href='data:link.target'><data:link.name/></a></li></b:loop></ul>
-</b:includable>
-</b:widget>
-</b:section>
-
-<b:section id='just' showaddelement='yes' growth='vertical'>
-</b:section>
-
-<b:section id='thegame' showaddelement='yes' growth='vertical'>
-</b:section>
-
-<b:section id='lost' showaddelement='yes' growth='vertical'>
-</b:section>
-
-
-
-
-
-</div> <!-- end footer-content -->
-
-
-
-
-
-</div> <!-- end #footer -->
 
 
 
