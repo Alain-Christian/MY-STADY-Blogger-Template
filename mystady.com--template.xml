@@ -91,7 +91,7 @@ Started:     07:41 1/3/2009
 ----------------------------------------------- */
 /*
 <Variable name="keycolor" description="Main Color" type="color" default="#C3D9FF"/>
-<Variable name="bodyBackColr" description="Body Background Color" type="color" default="#C3D9FF" value="#FFFFFF"/>
+<Variable name="bodyBackColr" description="Body Background Color" type="color" default="#C3D9FF" value="#000000"/>
 <Variable name="body.background" description="Body Background" type="background" color="$(bodyBackColr)" default="$(color) none repeat scroll top left"/>
 <Variable name="startSide" description="Side where text starts in blog language" type="automatic" default="left"/>
 <Variable name="endSide" description="Side where text ends in blog language" type="automatic" default="right"/>
@@ -628,13 +628,29 @@ width:100%;
 border:none;
 }
 }
+/*------------------------------------------------------------- #SOPAblackout */
+#header, #main-wrapper, #sidebar-wrapper, .e-comment-form, .jumplink, .page-navigator {
+display:none;
+}
+#SOPAblackout p {
+color:#FFFFFF;
+font:normal normal 2em Impact, sans-serif;
+margin:1em;
+width:60%;
+}
+#SOPAblackout a {
+color:#FF6652;
+}
 ]]></b:skin>
 <style type="text/css">@import url(http://static.nrelate.com/common_b/0.01.0/nrelate-panels-default.min.css);</style>
 </head>
 <body>
-<a style="width:1024px;height:40px;vertical-align:middle;text-align:center;background-color:#000;position:absolute;z-index:5555;top:60px;left:200px;background-image:url(http://americancensorship.org/images/stop-censorship-small.png);background-position:center center;background-repeat:no-repeat;" href="http://americancensorship.org"></a>
+	<div id="SOPAblackout">
+		<p>MY STADY is shutting down for an enrtire day, January 18 2012, in protest of Internet censorship via SOPA and PIPA. Click <a href="http://sopastrike.com/strike/">here</a> to learn more and take action.</p>
+<p>event: <a href="http://www.meetup.com/ny-tech/events/47879702/">Emergency NY Tech Meetup &amp; SOPA/PIPA Rally</a> today from 12:30-2:00PM @ 780 Third Ave—outside the offices of New York Senators Charles Schumer and Kirsten Gillibrand <a href="https://twitter.com/#!/search/%23nytmSOS">#nytmSOS</a></p>
+		<p><a href="https://twitter.com/#!/search/%23SOPAblackout">#SOPAblackout</a>, <a href="https://twitter.com/#!/search/%23SOPAstrike">#SOPAstrike</a></p>
 
-
+	</div>
 
 
 
