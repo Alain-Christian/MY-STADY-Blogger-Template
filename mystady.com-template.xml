@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html expr:dir="data:blog.languageDirection" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://ogp.me/ns/fb#">
+<html expr:dir="data:blog.languageDirection" lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:b="http://www.google.com/2005/gml/b" xmlns:data="http://www.google.com/2005/gml/data" xmlns:expr="http://www.google.com/2005/gml/expr" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head profile="http://a9.com/-/spec/opensearch/1.1/">
 <b:if cond="data:blog.pageType == &#34;archive&#34;">
 <!--Archive Page-->
@@ -52,10 +52,12 @@
 <title><data:blog.pageName/> | <data:blog.title/></title>
 <meta property="og:title" expr:content="data:blog.pageName" />
 <meta property="og:type" content="article" />
-<script type="text/javascript" src="http://www.google.com/jsapi"></script>
-<script type="text/javascript">google.load("swfobject", "2.2");var nr_domain = "<data:blog.homepageUrl/>";var nr_pageurl = "<data:blog.url/>";var nr_keywords= "encodeURI(document.title)";var nr_sourcehp = false;</script>
+<script src="http://www.google.com/jsapi" type="text/javascript" />
+<script type="text/javascript">google.load("swfobject", "2.2");window.brps_options = {"title": "<h4>Related Posts</h4>","max_results": 10,"append_src": true}</script>
 <script type="text/javascript">swfobject.registerObject("video1", "9.0.124");</script>
-<script type="text/javascript" src="http://static.nrelate.com/rcw_b/0.04.0/loader.min.js"></script>
+<script type="text/javascript" src="http://brps.appspot.com/brps.js?key=40f9ce58" />
+<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
+
 <b:if cond="data:blog.url == &#34;http://mystady.com/2010/01/one-piece-434-thats-so-gross.html&#34;">
 <meta property="og:description" name="description" content="On One Piece everybody cries! Except for this time. Here we have Chief Warden Magellan taking a wicked shit without warning in front of Vice-WardenHannyabal Vice-Warden. See, Megallan’s devil fruit powers make him immune to poison. So he eats poisonous food to make him stronger–I think. But these poisonous foods give him crippling diarrhea. Read: he spends ten hours a day on the toilet!" />
 <meta property="og:image" content="http://v.mystady.com/OP-434.png" />
@@ -63,6 +65,9 @@
 <meta property="og:video:width" content="512" />
 <meta property="og:video:height" content="288" />
 <meta property="og:video:type" content="application/x-shockwave-flash" /></b:if>
+
+
+
 </b:if>
 <b:if cond="data:blog.pageType == &#34;static_page&#34;">
 <!--Static Page-->
@@ -71,16 +76,15 @@
 <meta property="og:type" content="article" />
 <meta property="og:image" content="http://i.mystady.com/MY_STADY_88x88b2.png" />
 </b:if>
-<script type="text/javascript" src="http://apis.google.com/js/plusone.js"></script>
 <b:include data="blog" name="all-head-content" />
 <meta property="og:site_name" expr:content="data:blog.title" />
 <meta property="og:url" expr:content="data:blog.url" />
+<meta name="bitly-verification" content="60c070985bba"/>
 <meta name="msvalidate.01" content="6A3E67DD8722BD0093FF89E63F7536D8" />
 <META name="y_key" content="f2e47db906498f61" />
 <meta property="fb:admins" content="1411361561" />
 <meta property="fb:app_id" content="198892600172252" />
 <link rel="search" type="application/opensearchdescription+xml" title="MY STADY" href="http://dl.mystady.com/browser/opensearch-MY-STADY-mystady.com.xml" />
-<link href="https://plus.google.com/101953722413647768451" rel="publisher" />
 <b:skin><![CDATA[/*
 -----------------------------------------------
 Blogger Template Style
@@ -88,6 +92,7 @@ Name:     MY STADY (Minima was used as a starting point)
 Designer: Alain-Christian
 URL:      mystady.com
 Started:     07:41 1/3/2009
+Last Update: 5.11.2011
 ----------------------------------------------- */
 /*
 <Variable name="keycolor" description="Main Color" type="color" default="#C3D9FF"/>
@@ -102,7 +107,7 @@ Started:     07:41 1/3/2009
 <Variable name="GlobalCodPrBgC" description="Global Code, Pre Background Color" type="color" default="#EEEEEE"/>
 <Variable name="WidgetBlog1BgC" description="Widget: #Blog1 Background Color" type="color" default="#FFFFFF"/>
 <Variable name="ArticleBackgrC" description="Article Background Color" type="color" default="#FFFFFF"/>
-<Variable name="ArticleHeadLnF" description="Article Headline Font" type="font" default="normal bold 137% Arial, sans-serif"/>
+<Variable name="ArticleHeadLnF" description="Article Headline Font" type="font" default="normal bold 155% Arial, sans-serif"/>
 <Variable name="ArticleHeadLnC" description="Article Headline Color" type="color" default="#32527A"/>
 <Variable name="ArticleHeadBgC" description="Article Headline Background Color" type="color" default="#FFFFFF"/>
 <Variable name="ArticleBylineF" description="Article Byline, Comment Header Font" type="font" default="normal normal 70% Verdana, sans-serif"/>
@@ -130,6 +135,12 @@ Started:     07:41 1/3/2009
 <Variable name="SidebarWidgTiF" description="Sidebar Widget Title Font" type="font" default="normal bold 81% Verdana, sans-serif"/>
 <Variable name="SidebarContntF" description="Sidebar Content Font" type="font" default="normal normal 80% Verdana, sans-serif"/>
 <Variable name="SidebarContntC" description="Sidebar Content Color" type="color" default="#000000"/>
+<Variable name="Footer_____BgC" description="Footer Background Color" type="color" default="#222222"/>
+<Variable name="FooterContentF" description="Footer Content Font" type="font" default="normal normal 101% Trebuchet, Trebuchet MS, Arial, sans-serif"/>
+<Variable name="FooterWidgeTiF" description="Footer Widget Title Font" type="font" default="normal normal 180% Trebuchet, Trebuchet MS, Arial, sans-serif"/>
+<Variable name="FooterWidgeTiC" description="Footer Widget Title Color" type="Color" default="#999999"/>
+<Variable name="FooterBlogLisF" description="Footer Blog List Font" type="font" default="normal normal 70% Verdana, sans-serif"/>
+<Variable name="FooterBlogLBdC" description="Footer Blog List Border Color" type="color" default="#666666"/>
 */
 /* http://meyerweb.com/eric/tools/css/reset/ v2.0 | 20110126 License: none (public domain) */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
@@ -146,12 +157,18 @@ margin:0;
 padding:0;
 vertical-align:baseline;
 }
-a {
-text-decoration:none;
-}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav,
 section {
 display:block;
+}
+html, body {
+height: 100%;
+}
+body {
+line-height:1;
+}
+ol, ul {
+list-style:none;
 }
 blockquote {
 quotes:none;
@@ -160,11 +177,8 @@ blockquote:before, blockquote:after {
 content:'';
 content:none;
 }
-body, html {
-height:100%;
-}
-body {
-line-height:1;
+a {
+text-decoration:none;
 }
 table {
 border-collapse:collapse;
@@ -175,24 +189,15 @@ a:hover {
 color:$DefaultLinkHvC !important;
 cursor:pointer;
 }
-a:link, a:visited, a[onclick] {
+a:link, a:visited {
 color:$DefaultLink__C;
 cursor:pointer;
 }
-abbr, acronym {
-border-bottom:1px dotted $UserCommentBdC;
+abbr {
 cursor:help;
 }
 b {
 font-weight:bold;
-}
-blockquote {
-border-$startSide:3px solid $SearchRBylineC;
-font-style:italic;
-margin:0 0 0 4em;
-}
-blockquote p {
-padding:1em;
 }
 body {
 background:$(body.background);
@@ -202,54 +207,18 @@ background:$GlobalCodPrBgC;
 color:$GlobalCode___C;
 font:$GlobalCodePreF;
 }
-dl {
-margin:.5em 0 .5em 0;
-}
-dt {
-clear:$startSide;
-float:$startSide;
-font-size:90%;
-text-align:$endSide;
-width:9.5em;
-}
-dd {
-border-$startSide:1px solid $SearchRBylineC;
-font-size:90%;
-margin:0 0 1.5em 10em;
-padding:0 0 0 .5em;
-}
-i {
-font-style:italic;
-}
-p {
-line-height:1.5em;
-margin:0 0 1.5em 0;
-text-align:justify;
-}
 pre {
-margin:0 0 1.5em 0;
 padding:.5em;
 }
 /*-------------------------------------------------------------------- Navbar */
 #navbar-iframe {height:0px;visibility:hidden;display:none}
-/*------------------------------------------------------------ Social Plugins */
-#___plus_0 {
-margin:5em auto 0 auto !important;
-}
-.fb_iframe_widget {
-border:1px solid #dcdcdc;
-margin:.5em auto 0 auto;
-}
-#sidebar .twitter-follow-button {
-margin:.5em auto 0 auto;
-}
 /*------------------------------------------------------------ Header Widgets */
 #header {
 background:$SidebarContntC;
 }
 #header #LinkList4 p {
 color:$SidebarWidgBgC;
-font:$ArticleBylineF;
+font:$FooterBlogLisF;
 padding:1em 0 1em 0;
 text-align:center;
 }
@@ -258,7 +227,7 @@ display:inline;
 padding:.5em;
 }
 #header .PageList ul {
-font:$ArticleBylineF;
+font:$FooterBlogLisF;
 padding:1em;
 text-align:$endSide;
 }
@@ -274,17 +243,17 @@ color:$SidebarWidgBgC;
 background:$WidgetBlog1BgC;
 float:$startSide;
 overflow:hidden; /* fix for long non-text content breaking IE sidebar float */
-width:710px;
+width:728px;
 word-wrap:break-word; /* fix for long text breaking sidebar float in IE */
 }
 #outer-wrapper {
 margin:0 auto 0 auto;
-width:1024px;
+width:1000px;
 }
 #sidebar-wrapper {
 float:$endSide;
 overflow:hidden; /* fix for long non-text content breaking IE sidebar float */
-width:314px;
+width:262px;
 word-wrap:break-word; /* fix for long text breaking sidebar float in IE */
 }
 /*----------------------------------------------------------------- Slideshow */
@@ -462,7 +431,7 @@ margin:0 auto 0 auto;
 }
 .article div > img:first-child[width="288"][height="288"],
 .article div > img:first-child[width="300"][height="300"] {
-float:$startSide;
+float:left;
 margin:0 .5em 0 .5em;
 }
 .article .content h2, .article h3 {
@@ -471,10 +440,9 @@ display:inline-block;
 margin:0 0 0 -1em;
 padding:.2em 1em .2em 2em;
 }
-.article ol, .article ul {
-border-$startSide:3px solid $SearchRBylineC;
-margin:0 0 1.5em 1.5em;
-padding:0 0 0 2.5em;
+.article ul {
+list-style:square;
+padding:0 0 0 3em;
 }
 .article .jumplink {
 background:$ArticleJumpBgC;
@@ -487,9 +455,22 @@ text-align:$endSide;
 margin:0 0 -1em 0;
 text-align:center;
 }
-.comments h4 {
+.article #related_posts {
+background:$RelatedPostBgC;
+border-bottom:1px dotted $RelatedPostBdC;
+border-top:1px dotted $RelatedPostBdC;
+margin:2.5em -.51em 0 -.45em;
+padding:.5em .5em 2em .5em;
+}
+.article #related_posts h4, .comments h4 {
 color:$RelatedHeadLnC;
 font:$RelatedHeadLnF;
+}
+.article #related_posts ul {
+font:$RelatedPostULF;
+list-style:circle inside;
+margin:.2em 0 0 0;
+padding:0 1em 0 1em;
 }
 .comments h4 {
 padding:1em 0 0 0;
@@ -604,9 +585,6 @@ background:$SidebarWidgBgC;
 border-bottom:1px dashed $SidebarWidgBdC;
 padding:6px;
 }
-#sidebar .widget:last-child {
-border:none;
-}
 #sidebar h3 {
 color:$SidebarContntC;
 font:$SidebarWidgTiF;
@@ -615,23 +593,83 @@ font:$SidebarWidgTiF;
 border:2px solid $SidebarContntC;
 width:70%;
 }
+/*------------------------------------------------------------ Footer Widgets */
+#footer {
+background:$Footer_____BgC;
+color:$SidebarWidgBgC;
+float:$startSide;
+width:100%;
+}
+#footer .BlogArchive ul, #footer .Label ul {
+font:$FooterContentF;
+line-height:2em;
+padding:0 0 0 .5em;
+}
+#footer .BlogList .twitter-avatar {
+float:$startSide;
+margin:0 .5em 0 0;
+}
+#footer .BlogList li {
+border-bottom:1px dashed $FooterBlogLBdC;
+padding:0 0 .5em 0;
+}
+#footer .BlogList ul {
+font:$FooterBlogLisF;
+}
+#footer .footer-content {
+margin:1em auto 0 auto;
+width:1000px;
+}
+#footer .Label li {
+border-bottom:2px solid $FooterWidgeTiC;
+}
+#footer .Label li img {
+vertical-align:top;
+visibility:hidden;
+}
+#footer .LinkList ul, #footer .Profile ul {
+font:$FooterContentF;
+line-height:2em;
+list-style:square;
+padding:0 0 0 1.5em;
+}
+#footer h3 {
+color:$FooterWidgeTiC;
+font:$FooterWidgeTiF;
+margin:0 0 .5em 0;
+}
+#footer input[type="text"] {
+border:2px solid $SidebarContntC;
+height:2em;
+margin:0 0 0 1.5em;
+width:68%;
+}
+#you, #just, #lost {
+float:$startSide;
+width:225px;
+}
+#thegame {
+float:$startSide;
+width:325px;
+}
 /*-------------------------------------------------- Printer-Friendly Version */
 @media print {
-#header, #sidebar-wrapper, .e-comment-form, .jumplink, .page-navigator {
+#footer, #header, #sidebar-wrapper, .e-comment-form, .jumplink, .page-navigator {
 display:none;
 }
 #main-wrapper {
 width:100%;
 }
-#nrelate_related_placeholder a:after { font-size:.85em; content:" ["attr(href)"]"; }
-.article, .article .byline, .article #nrelate_related_placeholder {
+#related_posts a:after { font-size:.85em; content:" ["attr(href)"]"; }
+.article, .article .byline, .article #related_posts {
 border:none;
 }
 }
 ]]></b:skin>
-<style type="text/css">@import url(http://static.nrelate.com/common_b/0.01.0/nrelate-panels-default.min.css);</style>
 </head>
 <body>
+
+
 
 
 
@@ -639,13 +677,10 @@ border:none;
 <b:widget id='PageList1' locked='true' title='Pages' type='PageList'>
 <b:includable id='main'>
 	<ul>
-		<b:loop index='i' values='data:links' var='link'>
+		<b:loop values='data:links' var='link'>
 			<b:if cond='data:link.isCurrentPage'>
 				<li class='selected'><a expr:href='data:link.href' expr:title='data:link.title'><data:link.title/></a></li>
-			<b:else/>
-				<b:if cond='data:i == 3'>
-					<li><a onclick="window.open(&quot;http://www.blogger.com/follow-blog.g?blogID=4529442105479101205&quot;, &quot;followblog&quot;, &quot;height=600, width=600, toolbar=no, menubar=no, scrollbars=no, resizable=no, location=no, directories=no, status=no&quot; );">Follow</a></li>
-				</b:if>
+				<b:else/>
 				<li><a expr:href='data:link.href' expr:title='data:link.title'><data:link.title/></a></li>
 			</b:if>
 		</b:loop>
@@ -732,28 +767,11 @@ border:none;
 	<div class='article'>
 				<h1 class='error'>Yeah...We didn't find it.</h1>
 
-		<div class='content'><p>Blogger's built-in search engine is pretty lousy. As far as we can tell only the most recent posts are cached. How lame is that? Not worries, just <a expr:href='"http://www.google.com/search?sitesearch=mystady.com&amp;q=" + data:blog.searchQuery'>try your search again on Google.</a> They have more of our pages indexed. If that doesn't work <a href="http://mystady.com/p/contact-us.html">send us an email</a> and we'll look into the matter.</p><br /><p><a expr:href='"http://www.google.com/search?sitesearch=mystady.com&amp;q=" + data:blog.searchQuery'>» <b>Search MY STADY for <em><data:blog.searchQuery/></em> using Google.</b></a></p>
+		<div class='content'><p>Blogger's built-in search engine is pretty lousy. As far as we can tell only the most recent posts are cached. How lame is that? Not worries, just <a expr:href='"http://www.google.com/search?sitesearch=mystady.com&amp;q=" + data:blog.searchQuery'>try your search again on Google.</a> They have more of our pages indexed. If that doesn't work <a href="http://mystady.com/p/contact-us.html">send us an email</a> and we'll look into the matter.</p><br /><p><a expr:href='"http://www.google.com/search?sitesearch=mystady.com&amp;q=" + data:blog.searchQuery'>» <b>Search MY STADY for <data:blog.searchQuery/> using Google.</b></a></p>
 		</div>
 	</div>
 		</b:if >
 			</b:if>
-
-			<b:if cond='data:blog.searchLabel'>
-
-		<b:if cond='data:olderPageUrl == data:newerPageUrl'>
-	<div class='article'>
-				<h1 class='error'>DON'T PANIC</h1>
-
-		<div class='content'><p>Apparently the page you're looking for doesn't exist. Or maybe it once existed but has since ceased to be. Or maybe you typed some gibberish to see what happens, jerk! Anyhoo, we don't have any content filed under <em><data:blog.searchLabel/></em>. You might have better luck <a expr:href='"http://mystady.com/search?q=" + data:blog.searchLabel'>searching for <em><data:blog.searchLabel/></em></a>.</p><br />
-			<p><a expr:href='"http://mystady.com/search?q=" + data:blog.searchLabel'>» <b>Search MY STADY for <em><data:blog.searchLabel/></em>.</b></a></p>
-		</div>
-	</div>
-		</b:if >
-			</b:if>
-
-
-
-
 
 
 
@@ -899,24 +917,14 @@ border:none;
 			<a expr:href='data:post.url'>
 				<b:if cond='data:post.thumbnailUrl'>
 					<img expr:src='data:post.thumbnailUrl' expr:title='data:post.title' alt='thumbnail'/>
-				<b:else/>
-					<b:if cond='data:post.enclosures'>
-						<b:loop values='data:post.enclosures' var='enclosure'>
-							<b:if cond='data:enclosure.mimeType == "image/jpeg"'>
-								<img expr:src='data:enclosure.url' expr:title='data:post.title' alt='thumbnail'/>
-							<b:else/>
-								<b:if cond='data:enclosure.mimeType == "image/png"'>
-									<img expr:src='data:enclosure.url' expr:title='data:post.title' alt='thumbnail'/>
-								</b:if>
-							</b:if>
-						</b:loop>
-					</b:if>
+					<b:else/>
+					<img src='http://i.mystady.com/MY_STADY_96x96b4-grey-25o.png' expr:title='data:post.title' alt='thumbnail'/>
 				</b:if>
 			</a>
 		</span>
 		<h2><a expr:href='data:post.url' rel='bookmark' title='Permanent Link' expr:id='data:post.id'><data:post.title/></a></h2>
 		<div class='byline'>
-			<abbr expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr> <data:top.timestampLabel/> <b:include name='PostAuthorTweak' data='post'/>
+			<abbr expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr> <data:top.timestampLabel/> <a rel='author' expr:href='"http://mystady.com/p/about.html#" + data:post.author'><data:post.author/></a>
 		</div>
 		<data:post.snippet/> <a expr:href='data:post.url' expr:title='"Continue reading" + data:post.title'>Continue Reading »</a>
 	</div>
@@ -955,7 +963,7 @@ border:none;
 					</b:if>
 				</span>
 			</b:if>
-			<abbr expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr> <data:top.timestampLabel/> <b:include name='PostAuthorTweak' data='post'/>
+			<abbr expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr> <data:top.timestampLabel/> <a rel='author' expr:href='"http://mystady.com/p/about.html#" + data:post.author'><data:post.author/></a>
 			<span expr:class='"item-control " + data:post.adminClass'>
 				<b:if cond='data:post.editUrl'><a expr:href='data:post.editUrl' expr:title='data:top.editPostMsg' target='_blank'>+</a></b:if>
 				<a expr:href='data:post.url + "#links"' expr:title='data:top.backlinkLabel'><data:post.numBacklinks/></a> 
@@ -1063,7 +1071,7 @@ border:none;
 				<div id='share_buttons'>
 					<a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'><span class='share-button-link-text'><data:top.emailThisMsg/></span>
 					</a><a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'><span class='share-button-link-text'><data:top.blogThisMsg/></span>
-					</a><a class='goog-inline-block share-button sb-twitter' expr:href='"https://twitter.com/intent/tweet?url=" + data:post.url + "&amp;via=mystady&amp;text=" + data:post.title + "&amp;related=AnimeOnHulu:Our+side+project.,slowpoke95:Part-time+MY+STADY+contributor,AlainChristian:MY+STADY+staff.,FallenDuality:MY+STADY+staff.&amp;counturl=" + data:post.url' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span>
+					</a><a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span>
 					</a><a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToFacebookMsg/></span>
 					</a><a class='goog-inline-block share-button sb-orkut' expr:href='data:post.sharePostUrl + &quot;&amp;target=orkut&quot;' expr:title='data:top.shareToOrkutMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToOrkutMsg/></span>
 					</a><a class='goog-inline-block share-button sb-buzz' expr:href='data:post.sharePostUrl + &quot;&amp;target=buzz&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=415,width=690\&quot;); return false;&quot;' expr:title='data:top.shareToBuzzMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToBuzzMsg/></span></a>
@@ -1072,8 +1080,8 @@ border:none;
 					</div>
 				</div>
 			</b:if>
-<!-- Related posts [ Nrelate: http://nrelate.com/ ] -->
-			<div id='nrelate_related_placeholder'/>
+<!-- Related posts [ Created by: Yu-Jie Lin:  http://brps.appspot.com/ ] -->
+			<div id='related_posts'/>
 		</b:if>
 	</div>
 </b:includable>
@@ -1093,8 +1101,20 @@ border:none;
 					<div class='content'>
 <!--Comment Header-->
 						<div class='header'>
-							<b:include name='CommentAuthorTweak' data='comment'/>
-							<span class='comlinks'><b:include data='comment' name='commentDeleteIcon'/><a expr:href='"#" + data:comment.anchorName' title='comment permalink'>#</a></span>
+							<b:if cond='data:comment.authorUrl == "http://www.blogger.com/profile/17782443978544199362"'>
+								<span class='author'><a href='http://mystady.com/p/about.html#Alain-Christian'><data:comment.author/></a></span>
+								<b:else/>
+								<b:if cond='data:comment.authorUrl == "http://www.blogger.com/profile/04384568305404214594"'>
+									<span class='author'><a href='http://mystady.com/p/about.html#Fallenduality'><data:comment.author/></a></span>
+									<b:else/>
+									<b:if cond='data:comment.authorUrl'>
+										<span class='author'><a expr:href='data:comment.authorUrl' rel='nofollow'><data:comment.author/></a></span>
+										<b:else/>
+										<span class='author'><data:comment.author/></span>
+									</b:if>
+								</b:if>
+							</b:if>
+							<span class='comlinks'><b:include data='comment' name='commentDeleteIcon'/><a expr:href='data:comment.url' title='comment permalink'>#</a></span>
 							<div class='clear'/>
 							<data:comment.timestamp/> 
 						</div>
@@ -1127,51 +1147,15 @@ border:none;
 <b:includable id='page_navigation'>
 	<div class='page-navigator'>
 		<b:if cond='data:olderPageUrl'>
-			<b:if cond="data:blog.searchLabel">
-				<b:loop index='i' values='data:posts' var='post'>
-					<b:if cond='data:i == "19"'>
-						<a class='older' expr:href='data:olderPageUrl' expr:title='data:olderPageTitle'>&#171; <data:olderPageTitle/></a>
-					</b:if>
-				</b:loop>
-			<b:else/>
-				<a class='older' expr:href='data:olderPageUrl' expr:title='data:olderPageTitle'>&#171; <data:olderPageTitle/></a>
-			</b:if>
+			<a class='older' expr:href='data:olderPageUrl' expr:title='data:olderPageTitle'>&#171; <data:olderPageTitle/></a>
 		</b:if>
 		<b:if cond='data:newerPageUrl'>
-			<b:if cond="data:blog.searchLabel">
-				<b:if cond='data:blog.url != "http://mystady.com/search/label/" + data:blog.searchLabel'>
-					<b:if cond='data:blog.url != "http://mystady.com/search/label/New%20York%20City"'>
-						<b:if cond='data:blog.url != "http://mystady.com/search/label/Fanservice%20Friday"'>
-							<b:if cond='data:blog.url != "http://mystady.com/search/label/The%20Internet"'>
-								<a class="newer" onclick="window.history.go(-1);" expr:title="data:newerPageTitle"><data:newerPageTitle/> &#187;</a>
-							</b:if>
-						</b:if>
-					</b:if>
-				</b:if>
-			<b:else/>
+			<b:if cond='data:blog.url != "http://mystady.com/search/label/" + data:blog.searchLabel'>
 				<a class="newer" expr:href="data:newerPageUrl" expr:title="data:newerPageTitle"><data:newerPageTitle/> &#187;</a>
 			</b:if>
 		</b:if>
 	</div>
 </b:includable>
-
-<b:includable id='PostAuthorTweak' var='data'>
-	<b:if cond='data:data.authorUrl == "http://www.blogger.com/profile/17782443978544199362"'>
-		<a rel='author' href='http://mystady.com/p/about.html#Alain-Christian'>Alain-Christian</a>
-		<b:else/>
-			<b:if cond='data:data.authorUrl == "http://www.blogger.com/profile/04384568305404214594"'>
-				<a rel='author' href='http://mystady.com/p/about.html#Fallenduality'>Fallenduality</a>
-				<b:else/>
-<data:data.author/></b:if></b:if></b:includable>
-
-<b:includable id='CommentAuthorTweak' var='data'>
-	<b:if cond='data:data.authorUrl == "http://www.blogger.com/profile/17782443978544199362"'>
-		<a class='author' href='http://mystady.com/p/about.html#Alain-Christian'>Alain-Christian</a>
-		<b:else/>
-			<b:if cond='data:data.authorUrl == "http://www.blogger.com/profile/04384568305404214594"'>
-				<a class='author' href='http://mystady.com/p/about.html#Fallenduality'>Fallenduality</a>
-				<b:else/>
-<a class='author' expr:href='data:data.authorUrl'><data:data.author/></a></b:if></b:if></b:includable>
 </b:widget>
 </b:section>
 
@@ -1198,7 +1182,7 @@ border:none;
 	<ul>
 		<li>
 			<form action='http://mystady.com/search' method='get' onSubmit='this.submit();return false;'>
-				<input type='text' name='q' /><input type='submit' value="Search" />
+				<input type='text' name='q' /><input type='submit'/>
 			</form>
 		</li>
 	</ul>
@@ -1372,32 +1356,6 @@ border:none;
 </b:includable>
 </b:widget>
 
-<b:widget id='Text2' locked='false' title='Social' type='Text'>
-<b:includable id='main'>
-	<b:if cond='data:title'><h3><data:title/></h3></b:if>
-<g:plus href="https://plus.google.com/101953722413647768451" size="smallbadge"></g:plus>
-<div id="fb-root"></div><fb:like-box href="http://www.facebook.com/mystady" width="298" height="69" show_faces="false" border_color="#FF0000" stream="false" header="false"></fb:like-box>
-<a href="https://twitter.com/mystady" class="twitter-follow-button">Follow @mystady</a>
-</b:includable>
-</b:widget>
-
-<b:widget id='Gadget1' locked='false' title='Tip Jar' type='Gadget'>
-<b:includable id='main'>  
-	<b:if cond='data:renderingUrl != &quot;&quot;'>
-		<b:if cond='data:title'><h3><data:title/></h3></b:if>
-		<b:if cond='data:gadgetSnippet != &quot;&quot;'>
-			<data:gadgetSnippet/>
-		<b:else/>
-			<b:if cond='data:nonSocialFragment != &quot;&quot;'>
-				<data:nonSocialFragment/>
-			</b:if>
-		</b:if>
-	<b:else/>
-		<data:errorMessage/>
-	</b:if>
-</b:includable>
-</b:widget>
-
 
 
 
@@ -1426,7 +1384,99 @@ border:none;
 
 
 
-<!--Google Plus-->
+<div id='footer' class='clear'>
+
+
+
+
+
+<div class='footer-content'>
+
+
+
+
+
+<b:section id='you' showaddelement='yes' growth='vertical'>
+<b:widget id='LinkList2' locked='false' title='Our Friends' type='LinkList'>
+<b:includable id='main'>
+<!--Freind Links-->
+	<b:if cond='data:title'><h3><data:title/></h3></b:if>
+	<ul><b:loop values='data:links' var='link'><li><a expr:href='data:link.target'><data:link.name/></a></li></b:loop></ul>
+</b:includable>
+</b:widget>
+</b:section>
+
+<b:section id='just' showaddelement='yes' growth='vertical'>
+</b:section>
+
+<b:section id='thegame' showaddelement='yes' growth='vertical'>
+<b:widget id='BlogList1' locked='false' title='Twitter Feeds' type='BlogList'>
+<b:includable id='main'>
+<!-- Begin Twitter -->
+	<b:if cond='data:title != &quot;&quot;'><h3><data:title/></h3></b:if>
+	<ul>
+		<b:loop values='data:items' var='item'>
+			<li>
+<!--Avatars must be manually added because by default the widget displays Twitter's favicon for all feeds.-->
+				<b:if cond='data:showIcon == "true"'>
+					<span class='twitter-avatar'>
+						<b:if cond='data:item.blogUrl == "http://twitter.com/alainchristian"'>
+							<a expr:href='data:item.blogUrl'><img src='http://a1.twimg.com/profile_images/651915356/20242_1193403481185_1411361561_30444027_2412693_n_mini.jpg' width='24' height='24'/></a>
+						</b:if>
+						<b:if cond='data:item.blogUrl == "http://twitter.com/FallenDuality"'>
+							<a expr:href='data:item.blogUrl'><img src='http://a1.twimg.com/profile_images/139713858/l_1cac9d8d473d41839431ec46f6b1c9b3_mini.jpg' width='24' height='24'/></a>
+						</b:if>
+						<b:if cond='data:item.blogUrl == "http://twitter.com/slowpoke95"'>
+							<a expr:href='data:item.blogUrl'><img src='http://a3.twimg.com/profile_images/258157918/slowpoke_twitter_mini.png' width='24' height='24'/></a>
+						</b:if>
+					</span>
+				</b:if>
+				<b:if cond='data:showItemTitle == "true"'><data:item.itemTitle/></b:if>
+				<b:if cond='data:showTimePeriodSinceLastUpdate == "true"'><a expr:href='data:item.itemUrl'><data:item.timePeriodSinceLastUpdate/></a></b:if>
+				<div class='clear'/>
+			</li>
+		</b:loop>
+	</ul>
+</b:includable>
+</b:widget>
+</b:section>
+
+<b:section id='lost' showaddelement='yes' growth='vertical'>
+<b:widget id='FollowByEmail1' locked='false' title='Follow by Email' type='FollowByEmail'>
+<b:includable id='main'>
+	<b:if cond='data:title'><h3><data:title/></h3></b:if>
+<ul>
+	<li>
+	<form action='http://feedburner.google.com/fb/a/mailverify' expr:onsubmit='&quot;window.open(\&quot;http://feedburner.google.com/fb/a/mailverify?uri=&quot; + data:feedPath + &quot;\&quot;, \&quot;popupwindow\&quot;, \&quot;scrollbars=yes,width=550,height=520\&quot;); return true&quot;' method='post' target='popupwindow'>
+		<input class='follow-by-email-address' name='email' placeholder='Email address...' type='text'/>
+		<input class='follow-by-email-submit' type='submit' value='Go!'/>
+		<input expr:value='data:feedPath' name='uri' type='hidden'/>
+		<input name='loc' type='hidden' value='en_US'/>
+	</form>
+</li>
+</ul>
+</b:includable>
+</b:widget>
+</b:section>
+
+
+
+
+
+</div> <!-- end footer-content -->
+
+
+
+
+
+</div> <!-- end #footer -->
+
+
+
+
+
+<b:if cond="data:blog.pageType == &#34;item&#34;">
+<!--Plus One for Item Pages-->
 <script type="text/javascript">
   (function() {
     var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
@@ -1434,14 +1484,7 @@ border:none;
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
   })();
 </script>
-<!--Facebook-->
-<script type="text/javascript">
-  (function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) {return;} js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&amp;appId=198892600172252"; fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-<!--Twitter-->
-<script src="//platform.twitter.com/widgets.js" type="text/javascript"></script>
+</b:if>
 
 
 
