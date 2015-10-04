@@ -2,89 +2,84 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html expr:dir='data:blog.languageDirection' lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr' xmlns:fb='http://www.facebook.com/2008/fbml' xmlns:og='http://ogp.me/ns#'>
 <head profile='http://a9.com/-/spec/opensearch/1.1/'>
-<b:if cond='data:blog.pageType == &quot;archive&quot;'>
-<!--Archive Page-->
-<title><data:blog.pageName/> | <data:blog.title/> Archives</title>
-<meta expr:content='data:blog.pageName + &quot; | Archives&quot;' property='og:title'/>
-<meta content='article' property='og:type'/>
-<meta content='http://i.mystady.com/MY_STADY_96x96b4-grey-25o.png' property='og:image'/>
-<meta expr:content='&quot;Everything we posted in &quot; + data:blog.pageName + &quot; can be found on this page. Well, everything except expired events. Expired event listings are routinely purged from the archives.&quot;' name='description' property='og:description'/>
-<meta content='noindex,follow' name='robots'/>
-</b:if>
-<b:if cond='data:blog.pageType == &quot;index&quot;'>
-<b:if cond='data:blog.searchQuery'>
-<!--Search Page-->
-<title><data:blog.searchQuery/> | <data:blog.title/> Search Results</title>
-<meta expr:content='data:blog.searchQuery + &quot; | Search Results&quot;' property='og:title'/>
-<meta content='article' property='og:type'/>
-<meta content='http://i.mystady.com/MY_STADY_96x96b4-grey-25o.png' property='og:image'/>
-<meta expr:content='&quot;Search results for query: &quot; + data:blog.searchQuery' name='description' property='og:description'/>
-</b:if>
-<b:if cond='data:blog.searchLabel'>
-<!--Label Page-->
-<title><data:blog.searchLabel/> | <data:blog.title/></title>
-<meta expr:content='data:blog.searchLabel' property='og:title'/>
-<meta content='article' property='og:type'/>
-<meta content='http://i.mystady.com/MY_STADY_96x96b4-grey.png' property='og:image'/>
-<meta expr:content='&quot;A listing of all our posts tagged: &quot; + data:blog.searchLabel' name='description' property='og:description'/>
-</b:if>
-<b:if cond='data:blog.searchQuery == &quot;&quot;'>
-<b:if cond='data:blog.searchLabel == &quot;&quot;'>
-<b:if cond='data:blog.url == data:blog.homepageUrl'>
-<!--Homepage-->
-<title><data:blog.title/></title>
-<meta expr:content='data:blog.title' property='og:title'/>
-<meta content='blog' property='og:type'/>
-<meta content='http://i.mystady.com/MY_STADY_88x88b2.png' property='og:image'/>
-<meta content='One of the few e/n blogs still around from the 90s. Major topics include anime, gaming, club photography and blogger development. Minor topics include Andy Rooney’s hoarding problem.' name='description' property='og:description'/>
-<b:else/>
-<!--Index Page-->
-<title><data:blog.title/></title>
-<meta expr:content='data:blog.title' property='og:title'/>
-<meta content='article' property='og:type'/>
-<meta content='http://i.mystady.com/MY_STADY_88x88b2.png' property='og:image'/>
-</b:if>
-</b:if>
-</b:if>
-</b:if>
-<b:if cond='data:blog.pageType == &quot;item&quot;'>
-<!--Item Page-->
-<title><data:blog.pageName/> | <data:blog.title/></title>
-<meta expr:content='data:blog.pageName' property='og:title'/>
-<meta content='article' property='og:type'/>
-<script src='http://www.google.com/jsapi' type='text/javascript'/>
-<script type='text/javascript'>google.load(&quot;swfobject&quot;, &quot;2.2&quot;);window.brps_options = {&quot;title&quot;: &quot;<h4>Related Posts</h4>&quot;,&quot;max_results&quot;: 10,&quot;append_src&quot;: true}</script>
-<script type='text/javascript'>swfobject.registerObject(&quot;video1&quot;, &quot;9.0.124&quot;);</script>
-<script src='http://brps.appspot.com/brps.js?key=40f9ce58' type='text/javascript'/>
-<script src='http://apis.google.com/js/plusone.js' type='text/javascript'/>
-
-<b:if cond='data:blog.url == &quot;http://mystady.com/2010/01/one-piece-434-thats-so-gross.html&quot;'>
-<meta content='On One Piece everybody cries! Except for this time. Here we have Chief Warden Magellan taking a wicked shit without warning in front of Vice-WardenHannyabal Vice-Warden. See, Megallan’s devil fruit powers make him immune to poison. So he eats poisonous food to make him stronger–I think. But these poisonous foods give him crippling diarrhea. Read: he spends ten hours a day on the toilet!' name='description' property='og:description'/>
-<meta content='http://v.mystady.com/OP-434.png' property='og:image'/>
-<meta content='http://v.mystady.com/_p.swf?config=http://v.mystady.com/OP-434.xml' property='og:video'/>
-<meta content='512' property='og:video:width'/>
-<meta content='288' property='og:video:height'/>
-<meta content='application/x-shockwave-flash' property='og:video:type'/></b:if>
-
-
-
-</b:if>
-<b:if cond='data:blog.pageType == &quot;static_page&quot;'>
-<!--Static Page-->
-<title><data:blog.pageName/> | <data:blog.title/></title>
-<meta expr:content='data:blog.pageName' property='og:title'/>
-<meta content='article' property='og:type'/>
-<meta content='http://i.mystady.com/MY_STADY_88x88b2.png' property='og:image'/>
-</b:if>
-<b:include data='blog' name='all-head-content'/>
-<meta expr:content='data:blog.title' property='og:site_name'/>
-<meta expr:content='data:blog.url' property='og:url'/>
-<meta content='60c070985bba' name='bitly-verification'/>
-<meta content='6A3E67DD8722BD0093FF89E63F7536D8' name='msvalidate.01'/>
-<META content='f2e47db906498f61' name='y_key'/>
-<meta content='1411361561' property='fb:admins'/>
-<meta content='198892600172252' property='fb:app_id'/>
-<link href='http://dl.mystady.com/browser/opensearch-MY-STADY-mystady.com.xml' rel='search' title='MY STADY' type='application/opensearchdescription+xml'/>
+  <b:switch var='data:blog.pageType'>
+  	<b:case value='archive' />
+<!--Archive-->
+  	  <title><data:blog.pageName/> | <data:blog.title/> Archives</title>
+      <meta property='og:title' expr:content='data:blog.pageName + &quot; | Archives&quot;'/>
+      <meta property='og:description' expr:content='&quot;Everything we posted in &quot; + data:blog.pageName + &quot; can be found on this page. Well, except expired events which get routinely purged.&quot;'/>
+      <meta name='robots' content='noindex,follow'/>
+  	<b:case value='error_page' />
+<!--Error-->
+      <title>404 Not Found (Our Bad...) | <data:blog.title/></title>
+      <meta property='og:title' content='404 Page Not Found (Our Bad...)'/>
+      <meta property='og:description' content='This is the page you see when something goes wrong. Your typical 404 Error Page.'/>
+      <meta name='robots' content='noindex,follow'/>
+  	<b:case value='item' />
+<!--Item-->
+      <title><data:blog.pageName/> | <data:blog.title/></title>
+  	<b:case value='static_page' />
+<!--Static-->
+      <title><data:blog.pageName/> | <data:blog.title/></title>
+  <b:default />
+  	<b:if cond='data:blog.url == data:blog.homepageUrl'>
+<!--Home-->
+  	  <title><data:blog.title/></title>
+      <meta property='og:title' expr:content='data:blog.title'/>
+      <b:if cond='data:blog.metaDescription'>
+        <meta  property='og:description' expr:content='data:blog.metaDescription'/>
+      </b:if>
+    <b:elseif cond='data:blog.searchQuery == &quot;&quot; and data:blog.searchLabel == &quot;&quot;'/>
+<!--Index-->
+      <title><data:blog.title/></title>
+      <meta property='og:title' expr:content='data:blog.title'/>
+      <b:if cond='data:blog.metaDescription'>
+        <meta property='og:description' expr:content='data:blog.metaDescription'/>
+      </b:if>
+      <meta name='robots' content='noindex,follow'/>
+    </b:if>
+    <b:if cond='data:blog.searchQuery'>
+<!--Search-->
+      <title><data:blog.searchQuery/> | <data:blog.title/> Search Results</title>
+      <meta property='og:title' expr:content='data:blog.searchQuery + &quot; | Search Results&quot;'/>
+      <meta property='og:description' expr:content='&quot;Search results for query: &quot; + data:blog.searchQuery'/>
+      <meta name='robots' content='noindex,follow'/>
+    </b:if>
+    <b:if cond='data:blog.searchLabel'>
+<!--Label-->
+      <title><data:blog.searchLabel/> Articles | <data:blog.title/></title>
+      <meta property='og:title' expr:content='data:blog.searchLabel + &quot; Articles&quot;'/>
+      <meta property='og:description' expr:content='&quot;A listing of all our posts tagged: &quot; + data:blog.searchLabel'/>
+    </b:if>
+  </b:switch>
+  <b:if cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}'>
+<!--Item,Static-->
+    <meta property='og:type' content='article'/>
+    <meta property='og:title' expr:content='data:blog.pageName'/>
+  <b:else/>
+<!--Archive,Error,Home,Index,Search,Label-->
+    <meta property='og:type' content='website'/>
+    <meta name='twitter:creator' content='@alainchristian'/>
+    <meta name='twitter:card' content='summary'/>
+    <meta property='og:image' content='https://lh3.googleusercontent.com/-AEn4W4hdlqM/VgH3CLywrrI/AAAAAAAALq4/j2ZFV1Z_FJM/s128-Ic42/MY_STADY_720x720.png'/>
+  </b:if>
+  <meta property='og:url' expr:content='data:blog.canonicalUrl'/>
+  <meta property='fb:app_id' content='198892600172252'/>
+  <meta property='fb:admins' content='1411361561'/>
+  <meta property='og:site_name' expr:content='data:blog.title'/>
+  <meta property='article:publisher' content='https://www.facebook.com/mystady'/>
+  <meta name='twitter:site' content='@mystady'/>
+  <meta name='msvalidate.01' content='6A3E67DD8722BD0093FF89E63F7536D8'/>
+  <meta name='bitly-verification' content='60c070985bba'/>
+  <link href='http://dl.mystady.com/browser/opensearch-MY-STADY-mystady.com.xml' rel='search' title='MY STADY' type='application/opensearchdescription+xml'/>
+  <b:include data='blog' name='all-head-content'/>
+  <b:if cond='data:blog.pageType == &quot;item&quot;'>
+<!--Item-->
+  <script src='http://www.google.com/jsapi' type='text/javascript'/>
+  <script type='text/javascript'>google.load(&quot;swfobject&quot;, &quot;2.2&quot;);window.brps_options = {&quot;title&quot;: &quot;<h4>Related Posts</h4>&quot;,&quot;max_results&quot;: 10,&quot;append_src&quot;: true}</script>
+  <script type='text/javascript'>swfobject.registerObject(&quot;video1&quot;, &quot;9.0.124&quot;);</script>
+  <script src='http://brps.appspot.com/brps.js?key=40f9ce58' type='text/javascript'/>
+  </b:if>
 <b:skin><![CDATA[/*
 -----------------------------------------------
 Blogger Template Style
@@ -135,10 +130,6 @@ Last Update: 5.11.2011
 <Variable name="SidebarWidgTiF" description="Sidebar Widget Title Font" type="font" default="normal bold 81% Verdana, sans-serif" value="normal bold 81% Verdana, sans-serif"/>
 <Variable name="SidebarContntF" description="Sidebar Content Font" type="font" default="normal normal 80% Verdana, sans-serif" value="normal normal 80% Verdana, sans-serif"/>
 <Variable name="SidebarContntC" description="Sidebar Content Color" type="color" default="#000000" value="#000000"/>
-<Variable name="Footer_____BgC" description="Footer Background Color" type="color" default="#222222" value="#222222"/>
-<Variable name="FooterContentF" description="Footer Content Font" type="font" default="normal normal 101% Trebuchet, Trebuchet MS, Arial, sans-serif" value="normal normal 101% Trebuchet, Trebuchet MS, Arial, sans-serif"/>
-<Variable name="FooterWidgeTiF" description="Footer Widget Title Font" type="font" default="normal normal 180% Trebuchet, Trebuchet MS, Arial, sans-serif" value="normal normal 180% Trebuchet, Trebuchet MS, Arial, sans-serif"/>
-<Variable name="FooterWidgeTiC" description="Footer Widget Title Color" type="Color" default="#999999" value="#999999"/>
 <Variable name="FooterBlogLisF" description="Footer Blog List Font" type="font" default="normal normal 70% Verdana, sans-serif" value="normal normal 70% Verdana, sans-serif"/>
 <Variable name="FooterBlogLBdC" description="Footer Blog List Border Color" type="color" default="#666666" value="#666666"/>
 */
@@ -593,68 +584,9 @@ font:$SidebarWidgTiF;
 border:2px solid $SidebarContntC;
 width:70%;
 }
-/*------------------------------------------------------------ Footer Widgets */
-#footer {
-background:$Footer_____BgC;
-color:$SidebarWidgBgC;
-float:$startSide;
-width:100%;
-}
-#footer .BlogArchive ul, #footer .Label ul {
-font:$FooterContentF;
-line-height:2em;
-padding:0 0 0 .5em;
-}
-#footer .BlogList .twitter-avatar {
-float:$startSide;
-margin:0 .5em 0 0;
-}
-#footer .BlogList li {
-border-bottom:1px dashed $FooterBlogLBdC;
-padding:0 0 .5em 0;
-}
-#footer .BlogList ul {
-font:$FooterBlogLisF;
-}
-#footer .footer-content {
-margin:1em auto 0 auto;
-width:1000px;
-}
-#footer .Label li {
-border-bottom:2px solid $FooterWidgeTiC;
-}
-#footer .Label li img {
-vertical-align:top;
-visibility:hidden;
-}
-#footer .LinkList ul, #footer .Profile ul {
-font:$FooterContentF;
-line-height:2em;
-list-style:square;
-padding:0 0 0 1.5em;
-}
-#footer h3 {
-color:$FooterWidgeTiC;
-font:$FooterWidgeTiF;
-margin:0 0 .5em 0;
-}
-#footer input[type="text"] {
-border:2px solid $SidebarContntC;
-height:2em;
-margin:0 0 0 1.5em;
-width:68%;
-}
-#you, #just, #lost {
-float:$startSide;
-width:225px;
-}
-#thegame {
-float:$startSide;
-width:325px;
-}
 /*-------------------------------------------------- Printer-Friendly Version */
 @media print {
-#footer, #header, #sidebar-wrapper, .e-comment-form, .jumplink, .page-navigator {
+#header, #sidebar-wrapper, .e-comment-form, .jumplink, .page-navigator {
 display:none;
 }
 #main-wrapper {
@@ -773,7 +705,7 @@ head.appendChild(script);
 
 
 
-<div id='outer-wrapper'> 
+<div id='outer-wrapper'>
 
 
 
@@ -993,7 +925,7 @@ head.appendChild(script);
 							</b:if>
 							<span class='comlinks'><b:include data='comment' name='commentDeleteIcon'/><a expr:href='data:comment.url' title='comment permalink'>#</a></span>
 							<div class='clear'/>
-							<data:comment.timestamp/> 
+							<data:comment.timestamp/>
 						</div>
 <!--Comment Body-->
 						<div class='clear'/>
@@ -1256,48 +1188,69 @@ head.appendChild(script);
 		<b:if cond='data:newerPageUrl'>
 			<b:if cond='data:blog.url != &quot;http://mystady.com/search/label/&quot; + data:blog.searchLabel'>
 				<a class='newer' expr:href='data:newerPageUrl' expr:title='data:newerPageTitle'><data:newerPageTitle/> &#187;</a>
-			</b:if>
+	   </b:if>
 		</b:if>
 	</div>
 </b:includable>
-    <b:includable id='post' var='post'>
+
+<b:includable id='post' var='post'>
+<!--META-->
+  <b:if cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}'>
+    <b:if cond='data:blog.metaDescription'>
+      <meta property='og:description' expr:content='data:blog.metaDescription'/>
+    <b:else/>
+      <meta property='og:description' expr:content='data:post.snippet'/>
+    </b:if>
+    <b:if cond='data:post.firstImageUrl'>
+      <meta name='twitter:card' content='summary_large_image'/>
+      <meta property='og:image' expr:content='data:post.firstImageUrl'/>
+    <b:else/>
+    <meta name='twitter:card' content='summary'/>
+      <meta property='og:image' content='https://lh3.googleusercontent.com/-AEn4W4hdlqM/VgH3CLywrrI/AAAAAAAALq4/j2ZFV1Z_FJM/s128-Ic42/MY_STADY_720x720.png'/>
+      <meta property='og:image:width' content='128'/>
+      <meta property='og:image:height' content='128'/>
+    </b:if>
+
+  </b:if>
 	<div class='article'>
 <!--Headline-->
-		<b:if cond='data:post.title'>
-			<b:if cond='data:blog.pageType != &quot;item&quot;'>
-				<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
-					<h2><a expr:href='data:post.url' expr:id='data:post.id' rel='bookmark' title='Permanent Link'><data:post.title/></a></h2>
-				<b:else/>
-					<h1><a expr:href='data:post.url' expr:id='data:post.id' rel='bookmark' title='Permanent Link'><data:post.title/></a></h1>
-				</b:if>
-			<b:else/>
-				<h1><a expr:href='data:post.url' expr:id='data:post.id' rel='bookmark' title='Permanent Link'><data:post.title/></a></h1>
-			</b:if>
-		<b:else/>
-			<h2><a expr:href='data:post.url' expr:id='data:post.id' rel='bookmark' title='Permanent Link'>UNTITLED ENTRY</a></h2>
-		</b:if>
+    <b:if cond='data:post.title'>
+      <b:if cond='data:blog.pageType in {&quot;static_page&quot;,&quot;item&quot;}'>
+        <h1><a expr:href='data:post.url' expr:id='data:post.id' rel='bookmark' title='Permanent Link'><data:post.title/></a></h1>
+      <b:else/>
+        <h2><a expr:href='data:post.url' expr:id='data:post.id' rel='bookmark' title='Permanent Link'><data:post.title/></a></h2>
+      </b:if>
+    </b:if>
 <!--Byline-->
 		<div class='byline'>
+<!--Labels-->
 			<b:if cond='data:post.labels'>
 				<span class='byline-opposite'>
 					<b:loop values='data:post.labels' var='label'>
-						<b:if cond='data:label.name != &quot;~expired_event&quot;'>
-							<b:if cond='data:label.isLast'>
-								<a expr:href='data:label.url' expr:title='&quot;View all posts filed under &quot; + data:label.name' rel='category tag'><data:label.name/></a>
-								<b:else/>
-								<a expr:href='data:label.url' expr:title='&quot;View all posts filed under &quot; + data:label.name' rel='category tag'><data:label.name/></a>,
-							</b:if>
+            <b:if cond='data:label.name not in {&quot;~expired_event&quot;,&quot;~type-video&quot;}'>
+              <a expr:href='data:label.url' expr:title='&quot;View all posts filed under &quot; + data:label.name' rel='category tag'><data:label.name/></a>
 						</b:if>
 					</b:loop>
+<!--Source-->
 					<b:if cond='data:post.link'>
-						\\ <a expr:href='data:post.link' expr:title='&quot;This entry was inspired by or references: &quot; + data:post.link'>source</a>
+						// <a expr:href='data:post.link' expr:title='&quot;This entry was inspired by or references: &quot; + data:post.link'>source</a>
 					</b:if>
 				</span>
 			</b:if>
-			<abbr expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr> <data:top.timestampLabel/> <a expr:href='&quot;http://mystady.com/p/about.html#&quot; + data:post.author' rel='author'><data:post.author/></a>
+<!--Timestsmp-->
+			<abbr expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr> <data:top.timestampLabel/>
+<!--Author-->
+      <b:switch var='data:post.authorProfileUrl'>
+        <b:case value='https://plus.google.com/109820545028793935551' />
+          <meta name='twitter:creator' content='@alainchristian'/>
+          <a href='http://mystady.com/p/about.html#Alain-Christian' rel='author'>Alain-Christian</a>
+      <b:default />
+          <a expr:href='&quot;http://mystady.com/p/about.html#&quot; + data:post.author' rel='author'><data:post.author/></a>
+      </b:switch>
+<!--Edit, Backlinks Count-->
 			<span expr:class='&quot;item-control &quot; + data:post.adminClass'>
 				<b:if cond='data:post.editUrl'><a expr:href='data:post.editUrl' expr:title='data:top.editPostMsg' target='_blank'>+</a></b:if>
-				<a expr:href='data:post.url + &quot;#links&quot;' expr:title='data:top.backlinkLabel'><data:post.numBacklinks/></a> 
+				<a expr:href='data:post.url + &quot;#links&quot;' expr:title='data:top.backlinkLabel'><data:post.numBacklinks/></a>
 			</span>
 		</div>
 <!--Content-->
@@ -1972,22 +1925,13 @@ head.appendChild(script);
 <g:plus href='https://plus.google.com/101953722413647768451' size='smallbadge'/>
 <div id='fb-root'/><fb:like-box border_color='#FF0000' header='false' height='69' href='http://www.facebook.com/mystady' show_faces='false' stream='false' width='298'/>
 <a class='twitter-follow-button' href='https://twitter.com/mystady'>Follow @mystady</a>
-</b:includable>
-  </b:widget>
-  <b:widget id='Gadget1' locked='false' title='Tip Jar' type='Gadget'>
-    <b:includable id='main'>  
-	<b:if cond='data:renderingUrl != &quot;&quot;'>
-		<b:if cond='data:title'><h3><data:title/></h3></b:if>
-		<b:if cond='data:gadgetSnippet != &quot;&quot;'>
-			<data:gadgetSnippet/>
-		<b:else/>
-			<b:if cond='data:nonSocialFragment != &quot;&quot;'>
-				<data:nonSocialFragment/>
-			</b:if>
-		</b:if>
-	<b:else/>
-		<data:errorMessage/>
-	</b:if>
+<style>.ig-b- { display: inline-block; }
+.ig-b- img { visibility: hidden; }
+.ig-b-:hover { background-position: 0 -60px; } .ig-b-:active { background-position: 0 -120px; }
+.ig-b-v-24 { width: 137px; height: 24px; background: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24.png) no-repeat 0 0; }
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+.ig-b-v-24 { background-image: url(//badges.instagram.com/static/images/ig-badge-view-sprite-24@2x.png); background-size: 160px 178px; } }</style>
+<a href="http://instagram.com/alainchristian?ref=badge" class="ig-b- ig-b-v-24"><img src="//badges.instagram.com/static/images/ig-badge-view-24.png" alt="Instagram" /></a>
 </b:includable>
   </b:widget>
 </b:section>
@@ -2009,96 +1953,6 @@ head.appendChild(script);
 
 
 </div> <!--End outer-wrapper-->
-
-
-
-
-
-<div class='clear' id='footer'>
-
-
-
-
-
-<div class='footer-content'>
-
-
-
-
-
-<b:section growth='vertical' id='you' showaddelement='yes'>
-  <b:widget id='LinkList2' locked='false' title='Our Friends' type='LinkList'>
-    <b:includable id='main'>
-<!--Freind Links-->
-	<b:if cond='data:title'><h3><data:title/></h3></b:if>
-	<ul><b:loop values='data:links' var='link'><li><a expr:href='data:link.target'><data:link.name/></a></li></b:loop></ul>
-</b:includable>
-  </b:widget>
-</b:section>
-
-<b:section growth='vertical' id='just' showaddelement='yes'/>
-
-<b:section growth='vertical' id='thegame' showaddelement='yes'>
-  <b:widget id='BlogList1' locked='false' title='Twitter Feeds' type='BlogList'>
-    <b:includable id='main'>
-<!-- Begin Twitter -->
-	<b:if cond='data:title != &quot;&quot;'><h3><data:title/></h3></b:if>
-	<ul>
-		<b:loop values='data:items' var='item'>
-			<li>
-<!--Avatars must be manually added because by default the widget displays Twitter's favicon for all feeds.-->
-				<b:if cond='data:showIcon == &quot;true&quot;'>
-					<span class='twitter-avatar'>
-						<b:if cond='data:item.blogUrl == &quot;http://twitter.com/alainchristian&quot;'>
-							<a expr:href='data:item.blogUrl'><img height='24' src='http://a1.twimg.com/profile_images/651915356/20242_1193403481185_1411361561_30444027_2412693_n_mini.jpg' width='24'/></a>
-						</b:if>
-						<b:if cond='data:item.blogUrl == &quot;http://twitter.com/FallenDuality&quot;'>
-							<a expr:href='data:item.blogUrl'><img height='24' src='http://a1.twimg.com/profile_images/139713858/l_1cac9d8d473d41839431ec46f6b1c9b3_mini.jpg' width='24'/></a>
-						</b:if>
-						<b:if cond='data:item.blogUrl == &quot;http://twitter.com/slowpoke95&quot;'>
-							<a expr:href='data:item.blogUrl'><img height='24' src='http://a3.twimg.com/profile_images/258157918/slowpoke_twitter_mini.png' width='24'/></a>
-						</b:if>
-					</span>
-				</b:if>
-				<b:if cond='data:showItemTitle == &quot;true&quot;'><data:item.itemTitle/></b:if>
-				<b:if cond='data:showTimePeriodSinceLastUpdate == &quot;true&quot;'><a expr:href='data:item.itemUrl'><data:item.timePeriodSinceLastUpdate/></a></b:if>
-				<div class='clear'/>
-			</li>
-		</b:loop>
-	</ul>
-</b:includable>
-  </b:widget>
-</b:section>
-
-<b:section growth='vertical' id='lost' showaddelement='yes'>
-  <b:widget id='FollowByEmail1' locked='false' title='Follow by Email' type='FollowByEmail'>
-    <b:includable id='main'>
-	<b:if cond='data:title'><h3><data:title/></h3></b:if>
-<ul>
-	<li>
-	<form action='http://feedburner.google.com/fb/a/mailverify' expr:onsubmit='&quot;window.open(\&quot;http://feedburner.google.com/fb/a/mailverify?uri=&quot; + data:feedPath + &quot;\&quot;, \&quot;popupwindow\&quot;, \&quot;scrollbars=yes,width=550,height=520\&quot;); return true&quot;' method='post' target='popupwindow'>
-		<input class='follow-by-email-address' name='email' placeholder='Email address...' type='text'/>
-		<input class='follow-by-email-submit' type='submit' value='Go!'/>
-		<input expr:value='data:feedPath' name='uri' type='hidden'/>
-		<input name='loc' type='hidden' value='en_US'/>
-	</form>
-</li>
-</ul>
-</b:includable>
-  </b:widget>
-</b:section>
-
-
-
-
-
-</div> <!-- end footer-content -->
-
-
-
-
-
-</div> <!-- end #footer -->
 
 
 
