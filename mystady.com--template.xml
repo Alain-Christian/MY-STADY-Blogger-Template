@@ -76,9 +76,8 @@
   <b:if cond='data:blog.pageType == &quot;item&quot;'>
 <!--Item-->
   <script src='http://www.google.com/jsapi' type='text/javascript'/>
-  <script type='text/javascript'>google.load(&quot;swfobject&quot;, &quot;2.2&quot;);window.brps_options = {&quot;title&quot;: &quot;<h4>Related Posts</h4>&quot;,&quot;max_results&quot;: 10,&quot;append_src&quot;: true}</script>
+  <script type='text/javascript'>google.load(&quot;swfobject&quot;, &quot;2.2&quot;);</script>
   <script type='text/javascript'>swfobject.registerObject(&quot;video1&quot;, &quot;9.0.124&quot;);</script>
-  <script src='http://brps.appspot.com/brps.js?key=40f9ce58' type='text/javascript'/>
   </b:if>
 <b:skin><![CDATA[/*
 -----------------------------------------------
@@ -113,11 +112,7 @@ Last Update: 5.11.2011
 <Variable name="ArticleH3__BgC" description="Article h3 Background Color" type="color" default="#E1ECFF" value="#E1ECFF"/>
 <Variable name="ArticleJumpLkF" description="Article JumpLink Font" type="font" default="normal bold 193% Arial, sans-serif" value="normal bold 193% Arial, sans-serif"/>
 <Variable name="ArticleJumpBgC" description="Article JumpLink Background Color" type="color" default="#E1ECFF" value="#E1ECFF"/>
-<Variable name="RelatedHeadLnF" description="Related Posts, Comments Headline Font" type="font" default="normal bold 114% Arial, sans-serif" value="normal bold 114% Arial, sans-serif"/>
-<Variable name="RelatedHeadLnC" description="Related Posts, Comments Headline Color" type="color" default="#3D3D3F" value="#3D3D3F"/>
-<Variable name="RelatedPostULF" description="Related Posts ul Font" type="font" default="normal normal 84% Arial, sans-serif" value="normal normal 84% Arial, sans-serif"/>
 <Variable name="RelatedPostBgC" description="Related Posts Background Color" type="color" default="#F8F8FE" value="#F8F8FE"/>
-<Variable name="RelatedPostBdC" description="Related Posts Border Color" type="color" default="#0066CC" value="#0066CC"/>
 <Variable name="UserCommentAuF" description="User Comment Author Font" type="font" default="normal bold 111% Verdana, sans-serif" value="normal bold 111% Verdana, sans-serif"/>
 <Variable name="UserCommentBgC" description="User Comment Background Color" type="color" default="#F5F5F5" value="#F5F5F5"/>
 <Variable name="UserCommentBdC" description="User Comment Border Color" type="color" default="#DEDEDE" value="#DEDEDE"/>
@@ -207,7 +202,7 @@ padding:.5em;
 #header {
 background:$SidebarContntC;
 }
-#header #LinkList4 p {
+#header #LinkList4 p, #header #LinkList4 h1 {
 color:$SidebarWidgBgC;
 font:$FooterBlogLisF;
 padding:1em 0 1em 0;
@@ -408,6 +403,9 @@ line-height:1.5em;
 margin:0 0 1.2em 0;
 text-align:justify;
 }
+.article .content p {
+margin:0 0 2em 0;
+}
 .article .thumbnail {
 display:block;
 margin:1.5em auto 1em auto;
@@ -441,27 +439,6 @@ font:$ArticleJumpLkF;
 margin:0 0 0 -.4em;
 padding:0 1em 0 1em;
 text-align:$endSide;
-}
-.article #share_buttons {
-margin:0 0 -1em 0;
-text-align:center;
-}
-.article #related_posts {
-background:$RelatedPostBgC;
-border-bottom:1px dotted $RelatedPostBdC;
-border-top:1px dotted $RelatedPostBdC;
-margin:2.5em -.51em 0 -.45em;
-padding:.5em .5em 2em .5em;
-}
-.article #related_posts h4, .comments h4 {
-color:$RelatedHeadLnC;
-font:$RelatedHeadLnF;
-}
-.article #related_posts ul {
-font:$RelatedPostULF;
-list-style:circle inside;
-margin:.2em 0 0 0;
-padding:0 1em 0 1em;
 }
 .comments h4 {
 padding:1em 0 0 0;
@@ -592,8 +569,7 @@ display:none;
 #main-wrapper {
 width:100%;
 }
-#related_posts a:after { font-size:.85em; content:" ["attr(href)"]"; }
-.article, .article .byline, .article #related_posts {
+.article, .article .byline {
 border:none;
 }
 }
@@ -660,7 +636,7 @@ border:none;
 	</b:loop>
 	<b:if cond='data:blog.searchQuery'>
 <!--Search Page Msg-->
-		<p>Displaying search results for query: <data:blog.searchQuery/></p>
+		<h1>Search Results for: <data:blog.searchQuery/></h1>
 	</b:if>
 </b:includable>
   </b:widget>
@@ -736,74 +712,52 @@ head.appendChild(script);
 	</b:if>
 </b:includable>
   </b:widget>
-  <b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
-    <b:includable id='main' var='top'>
-			<b:if cond='data:blog.searchQuery'>
-
-		<b:if cond='data:olderPageUrl == data:newerPageUrl'>
-	<div class='article'>
-				<h1 class='error'>Yeah...We didn&#39;t find it.</h1>
-
-		<div class='content'><p>Blogger&#39;s built-in search engine is pretty lousy. As far as we can tell only the most recent posts are cached. How lame is that? Not worries, just <a expr:href='&quot;http://www.google.com/search?sitesearch=mystady.com&amp;q=&quot; + data:blog.searchQuery'>try your search again on Google.</a> They have more of our pages indexed. If that doesn&#39;t work <a href='http://mystady.com/p/contact-us.html'>send us an email</a> and we&#39;ll look into the matter.</p><br/><p><a expr:href='&quot;http://www.google.com/search?sitesearch=mystady.com&amp;q=&quot; + data:blog.searchQuery'>&#187; <b>Search MY STADY for <data:blog.searchQuery/> using Google.</b></a></p>
-		</div>
-	</div>
-		</b:if>
-			</b:if>
 
 
 
+
+<b:widget id='Blog1' locked='true' title='Blog Posts' type='Blog'>
+
+
+
+<b:includable id='main' var='top'>
+  <b:include data='top' name='status-search-fail'/>
 	<b:loop index='i' values='data:posts' var='post'>
 		<b:if cond='data:blog.pageType != &quot;item&quot;'>
 			<b:if cond='data:blog.searchQuery == &quot;&quot;'>
 				<b:if cond='data:post.labels'>
 					<b:loop values='data:post.labels' var='label'>
 						<b:if cond='data:label.isLast == &quot;true&quot;'>
-							<b:if cond='data:label.name != &quot;~expired_event&quot;'>
-								<b:if cond='data:label.name != &quot;~type-video&quot;'>
-
-									<b:if cond='data:label.name != &quot;slideshow&quot;'>
-
-									<!--Archive List-->
-									<b:include data='post' name='search-results'/>
+							<b:if cond='data:label.name != &quot;~type-video&quot;'>
+							  <b:if cond='data:label.name != &quot;slideshow&quot;'>
+<!--Archive List-->
+                  <b:include data='post' name='search-results'/>
 								<b:else/>
 									<b:if cond='data:label.name == &quot;slideshow&quot;'>
-										<!--Slideshow Teaser-->
+<!--Slideshow Teaser-->
 										<b:include data='post' name='slideshow-teaser'/>
 									</b:if>
-
-
-
-
 								</b:if>
-								<b:else/>
-								<b:if cond='data:blog.searchLabel == &quot;~expired_event&quot;'>
-									<!--~expired_event Listing-->
-									<b:include data='post' name='post'/>
+							<b:else/>
+                <b:if cond='data:label.name == &quot;~type-video&quot;'>
+<!--Video Teaser-->
+                  <b:loop values='data:post.enclosures' var='enclosure'>
+                    <b:if cond='data:enclosure.mimeType in {&quot;image/jpeg&quot;,&quot;image/png&quot;}'>
+                      <b:include data='post' name='video-teaser'/>
+                    </b:if>
+                  </b:loop>
 								</b:if>
-
-									<b:if cond='data:label.name == &quot;~type-video&quot;'>
-										<!--Video Teaser-->
-										<b:include data='post' name='video-teaser'/>
-									</b:if>
-
-
-
-								</b:if>
-
-
 							</b:if>
 						</b:if>
 					</b:loop>
-					<b:else/>
+				<b:else/>
 <!--Article without Labels -->
-					<b:include data='post' name='post'/>
+				  <b:include data='post' name='post'/>
 				</b:if>
 			<b:else/>
 <!--Search Listing-->
-
-
-				<b:include data='post' name='search-results'/>
-			</b:if>
+        <b:include data='post' name='search-results'/>
+      </b:if>
 		<b:else/>
 <!--Item Pages-->
 			<b:include data='post' name='post'/>
@@ -812,6 +766,29 @@ head.appendChild(script);
 	</b:loop>
 	<b:include name='page_navigation'/>
 </b:includable>
+
+
+
+<b:includable id='status-search-fail'>
+  <b:if cond='data:navMessage == &quot;No posts matching the query: &#60;b&#62;&quot; + data:blog.searchQuery + &quot;&#60;/b&#62;. &#60;a href=\&quot;&quot; + data:blog.canonicalHomepageUrl + &quot;\&quot;&#62;Show all posts&#60;/a&#62;&quot;'>
+    <div class='article'>
+      <div class='content'>
+        <blockquote>
+          <p>Winners are not afraid of losing. But losers are. Failure is part of the process of success. People who avoid failure also avoid success.</p><footer>Robert T. Kiyosaki writer of <cite title="Rich Dad, Poor Dad">Rich Dad, Poor Dad</cite></footer>
+        </blockquote>
+        <p></p><p>All is not lost. Blogger's built-in search engine tries, it really does. But it doesn't cache eveything. You might want to <a expr:href='&quot;http://www.google.com/search?sitesearch=mystady.com&amp;q=&quot; + data:blog.searchQuery'>try your search again on the Google</a>. It has more of our pages indexed. If that doesn't work, gosh, <a href='http://mystady.com/p/contact-us.html'>send us an email or something</a>. We'll look into it!</p><p>Other Suggestions:</p>
+        <ul>
+          <li>Did ya spell "<data:blog.searchQuery/>" correctly?</li><li>Try different keywords.</li><li>Try more general keywords; broaden your focus.</li><li>Try fewer keywords.</li><li>Or you could just, you know, <a expr:href='&quot;http://www.google.com/search?sitesearch=mystady.com&amp;q=&quot; + data:blog.searchQuery'>Google it</a> like I told you earlier!</li>
+        </ul>
+      </div>
+    </div>
+  </b:if>
+</b:includable>
+
+
+
+
+
     <b:includable id='backlinkDeleteIcon' var='backlink'>
   <span expr:class='&quot;item-control &quot; + data:backlink.adminClass'>
     <a expr:href='data:backlink.deleteUrl' expr:title='data:top.deleteBacklinkMsg'>
@@ -1210,7 +1187,6 @@ head.appendChild(script);
       <meta property='og:image:width' content='128'/>
       <meta property='og:image:height' content='128'/>
     </b:if>
-
   </b:if>
 	<div class='article'>
 <!--Headline-->
@@ -1227,7 +1203,7 @@ head.appendChild(script);
 			<b:if cond='data:post.labels'>
 				<span class='byline-opposite'>
 					<b:loop values='data:post.labels' var='label'>
-            <b:if cond='data:label.name not in {&quot;~expired_event&quot;,&quot;~type-video&quot;}'>
+            <b:if cond='data:label.name not in {&quot;~type-video&quot;}'>
               <a expr:href='data:label.url' expr:title='&quot;View all posts filed under &quot; + data:label.name' rel='category tag'><data:label.name/></a>
 						</b:if>
 					</b:loop>
@@ -1253,121 +1229,69 @@ head.appendChild(script);
 				<a expr:href='data:post.url + &quot;#links&quot;' expr:title='data:top.backlinkLabel'><data:post.numBacklinks/></a>
 			</span>
 		</div>
-<!--Content-->
-		<div class='content'>
-			<b:if cond='data:post.hasJumpLink'>
-				<b:loop values='data:post.enclosures' var='enclosure'>
-					<b:if cond='data:enclosure.mimeType == &quot;video/mp4&quot;'>
-						<b:loop values='data:post.enclosures' var='enclosure'>
-							<b:if cond='data:enclosure.mimeType == &quot;image/png&quot;'>
-<!--MY STADY Video Thumbnails PNG-->
-								<a expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Click to watch &quot; + data:post.title'>
-									<img class='thumbnail' expr:src='data:enclosure.url'/>
-								</a>
-							<b:else/>
-								<b:if cond='data:enclosure.mimeType == &quot;image/jpeg&quot;'>
-<!--MY STADY Video Thumbnails JPG-->
-									<a expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Click to watch &quot; + data:post.title'>
-										<img class='thumbnail' expr:src='data:enclosure.url'/>
-									</a>
-								</b:if>
-							</b:if>
-						</b:loop>
-					</b:if>
-					<b:if cond='data:enclosure.mimeType == &quot;image/jpeg&quot;'>
-						<b:loop values='data:post.labels' var='label'>
-							<b:if cond='data:label.name == &quot;YouTube&quot;'>
-<!--YouTube Thumbnails-->
-								<a expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Click to watch &quot; + data:post.title'>
-									<img class='thumbnail' expr:src='data:enclosure.url'/>
-								</a>
-							</b:if>
-							<b:if cond='data:label.name == &quot;Hulu&quot;'>
-<!--Hulu Thumbnails-->
-								<a expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Click to watch &quot; + data:post.title'>
-									<img class='thumbnail' expr:src='data:enclosure.url'/>
-								</a>
-							</b:if>
-							<b:if cond='data:label.name == &quot;Veoh&quot;'>
-<!--Veoh Thumbnails-->
-								<a expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Click to watch &quot; + data:post.title'>
-									<img class='thumbnail' expr:src='data:enclosure.url'/>
-								</a>
-							</b:if>
-							<b:if cond='data:label.name == &quot;blip.tv&quot;'>
-<!--blip.tv Thumbnails-->
-								<a expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Click to watch &quot; + data:post.title'>
-									<img class='thumbnail' expr:src='data:enclosure.url'/>
-								</a>
-							</b:if>
-						</b:loop>
-					</b:if>
-				</b:loop>
-<!--Body with Thumbnail-->
-				<data:post.body/>
-			<b:else/>
-<!--Body without Thumbnail-->
-				<data:post.body/>
-			</b:if>
-			<div class='clear'/>
-		</div>
-		<b:if cond='data:post.hasJumpLink'>
-			<b:if cond='data:post.labels'>
-				<b:loop values='data:post.labels' var='label'>
-					<b:if cond='data:label.name == &quot;Video&quot;'>
-<!--JumpLink Video-->
-						<a class='jumplink' expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Click to watch &quot; + data:post.title'>Watch the Video</a>
-					</b:if>
-						<b:if cond='data:label.isLast'>
-							<b:if cond='data:label.name != &quot;Video&quot;'>
-								<b:if cond='data:label.name != &quot;YouTube&quot;'>
-<!--JumpLink Standard with Labels-->
-									<a class='jumplink' expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Continue reading&quot; + data:post.title'><data:post.jumpText/></a>
-								</b:if>
-							</b:if>
-						</b:if>
-				</b:loop>
-			<b:else/>
-<!--JumpLink Standard without Labels-->
-				<a class='jumplink' expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Continue reading&quot; + data:post.title'><data:post.jumpText/></a>
-			</b:if>
-		<b:else/>
-			<b:if cond='data:blog.pageType != &quot;item&quot;'>
-				<b:if cond='data:blog.pageType != &quot;static_page&quot;'>
-					<b:if cond='data:post.allowComments'>
-<!--Comment Links-->
-						<b:if cond='data:post.numComments == 0'>
-							<a class='jumplink' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'>Add Comment &#8594;</a>
-						</b:if>
-						<b:if cond='data:post.numComments == 1'>
-							<a class='jumplink' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'>1 Comment</a>
-						</b:if>
-						<b:if cond='data:post.numComments &gt; 1'>
-							<a class='jumplink' expr:href='data:post.addCommentUrl' expr:onclick='data:post.addCommentOnclick'><data:post.numComments/> <data:commentLabelPlural/></a>
-						</b:if>
-					</b:if>
-				</b:if>
-			</b:if>
-		</b:if>
-		<b:if cond='data:blog.pageType == &quot;item&quot;'>
-<!--Sharing Icons-->
-			<b:if cond='data:post.sharePostUrl'>
-				<div id='share_buttons'>
-					<a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'><span class='share-button-link-text'><data:top.emailThisMsg/></span>
-					</a><a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'><span class='share-button-link-text'><data:top.blogThisMsg/></span>
-					</a><a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span>
-					</a><a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToFacebookMsg/></span>
-					</a><a class='goog-inline-block share-button sb-orkut' expr:href='data:post.sharePostUrl + &quot;&amp;target=orkut&quot;' expr:title='data:top.shareToOrkutMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToOrkutMsg/></span>
-					</a><a class='goog-inline-block share-button sb-buzz' expr:href='data:post.sharePostUrl + &quot;&amp;target=buzz&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=415,width=690\&quot;); return false;&quot;' expr:title='data:top.shareToBuzzMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToBuzzMsg/></span></a>
-					<div class='goog-inline-block dummy-container'>
-						<g:plusone size='medium' source='blogger'/>
-					</div>
-				</div>
-			</b:if>
-<!-- Related posts [ Created by: Yu-Jie Lin:  http://brps.appspot.com/ ] -->
-			<div id='related_posts'/>
-		</b:if>
-	</div>
+    <!--Content-->
+    		<div class='content'>
+    			<b:if cond='data:post.hasJumpLink'>
+    				<b:loop values='data:post.enclosures' var='enclosure'>
+    					<b:if cond='data:enclosure.mimeType == &quot;video/mp4&quot;'>
+    						<b:loop values='data:post.enclosures' var='enclosure'>
+    							<b:if cond='data:enclosure.mimeType == &quot;image/png&quot;'>
+    <!--MY STADY Video Thumbnails PNG-->
+    								<a expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Click to watch &quot; + data:post.title'>
+    									<img class='thumbnail' expr:src='data:enclosure.url'/>
+    								</a>
+    							<b:else/>
+    								<b:if cond='data:enclosure.mimeType == &quot;image/jpeg&quot;'>
+    <!--MY STADY Video Thumbnails JPG-->
+    									<a expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Click to watch &quot; + data:post.title'>
+    										<img class='thumbnail' expr:src='data:enclosure.url'/>
+    									</a>
+    								</b:if>
+    							</b:if>
+    						</b:loop>
+    					</b:if>
+    					<b:if cond='data:enclosure.mimeType == &quot;image/jpeg&quot;'>
+    						<b:loop values='data:post.labels' var='label'>
+    							<b:if cond='data:label.name in {&quot;YouTube&quot;,&quot;Hulu&quot;,&quot;Veoh&quot;,&quot;blip.tv&quot;}'>
+    <!--Video Thumbnails-->
+    								<a expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Click to watch &quot; + data:post.title'>
+    									<img class='thumbnail' expr:src='data:enclosure.url'/>
+    								</a>
+    				      </b:if>
+    						</b:loop>
+    					</b:if>
+    				</b:loop>
+    <!--Body with Thumbnail-->
+    				<data:post.body/>
+    			<b:else/>
+    <!--Body without Thumbnail-->
+    				<data:post.body/>
+    			</b:if>
+    			<div class='clear'/>
+    		</div>
+    		<b:if cond='data:post.hasJumpLink'>
+    			<b:if cond='data:post.labels'>
+    				<b:loop values='data:post.labels' var='label'>
+    					<b:if cond='data:label.name == &quot;Video&quot;'>
+    <!--JumpLink Video-->
+    						<a class='jumplink' expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Click to watch &quot; + data:post.title'>Watch the Video</a>
+    					</b:if>
+    						<b:if cond='data:label.isLast'>
+    							<b:if cond='data:label.name != &quot;Video&quot;'>
+    								<b:if cond='data:label.name != &quot;YouTube&quot;'>
+    <!--JumpLink Standard with Labels-->
+    									<a class='jumplink' expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Continue reading&quot; + data:post.title'><data:post.jumpText/></a>
+    								</b:if>
+    							</b:if>
+    						</b:if>
+    				</b:loop>
+    			<b:else/>
+    <!--JumpLink Standard without Labels-->
+    				<a class='jumplink' expr:href='data:post.url + &quot;#more&quot;' expr:title='&quot;Continue reading&quot; + data:post.title'><data:post.jumpText/></a>
+    			</b:if>
+    		<b:else/>
+    		</b:if>
+    	</div>
 </b:includable>
     <b:includable id='postQuickEdit' var='post'>
   <b:if cond='data:post.editUrl'>
@@ -1393,24 +1317,7 @@ head.appendChild(script);
 		<div class='byline'>
 			<abbr expr:title='data:post.timestampISO8601'><data:post.timestamp/></abbr> <data:top.timestampLabel/> <a expr:href='&quot;http://mystady.com/p/about.html#&quot; + data:post.author' rel='author'><data:post.author/></a>
 		</div>
-		<data:post.snippet/> <a expr:href='data:post.url' expr:title='&quot;Continue reading&quot; + data:post.title'>Continue Reading &#187;</a>
-	</div>
-</b:includable>
-    <b:includable id='shareButtons' var='post'>
-  <b:if cond='data:top.showEmailButton'><a class='goog-inline-block share-button sb-email' expr:href='data:post.sharePostUrl + &quot;&amp;target=email&quot;' expr:title='data:top.emailThisMsg' target='_blank'><span class='share-button-link-text'><data:top.emailThisMsg/></span></a></b:if><b:if cond='data:top.showBlogThisButton'><a class='goog-inline-block share-button sb-blog' expr:href='data:post.sharePostUrl + &quot;&amp;target=blog&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=270,width=475\&quot;); return false;&quot;' expr:title='data:top.blogThisMsg' target='_blank'><span class='share-button-link-text'><data:top.blogThisMsg/></span></a></b:if><b:if cond='data:top.showTwitterButton'><a class='goog-inline-block share-button sb-twitter' expr:href='data:post.sharePostUrl + &quot;&amp;target=twitter&quot;' expr:title='data:top.shareToTwitterMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToTwitterMsg/></span></a></b:if><b:if cond='data:top.showFacebookButton'><a class='goog-inline-block share-button sb-facebook' expr:href='data:post.sharePostUrl + &quot;&amp;target=facebook&quot;' expr:onclick='&quot;window.open(this.href, \&quot;_blank\&quot;, \&quot;height=430,width=640\&quot;); return false;&quot;' expr:title='data:top.shareToFacebookMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToFacebookMsg/></span></a></b:if><b:if cond='data:top.showPinterestButton'><a class='goog-inline-block share-button sb-pinterest' expr:href='data:post.sharePostUrl + &quot;&amp;target=pinterest&quot;' expr:title='data:top.shareToPinterestMsg' target='_blank'><span class='share-button-link-text'><data:top.shareToPinterestMsg/></span></a></b:if><b:if cond='data:top.showDummy'><div class='goog-inline-block dummy-container'><data:post.dummyTag/></div></b:if>
-</b:includable>
-    <b:includable id='slideshow-teaser' var='post'>
-	<div class='slideshow-teaser'>
-		<div class='content-type'><a href='http://mystady.com/search/label/slideshow' rel='category tag' title='View all slideshows'>slideshow</a></div>
-		<h2><a expr:href='data:post.url' expr:id='data:post.id' rel='bookmark' title='Permanent Link'><data:post.title/></a></h2>
-		<a expr:href='data:post.url'>
-			<b:loop values='data:post.enclosures' var='enclosure'>
-				<img alt='thumbnail' expr:src='data:enclosure.url' expr:title='data:post.title'/>
-			</b:loop>
-		</a>
-		<span class='snippet'>
-			<data:post.snippet/> <a expr:href='data:post.url' expr:title='&quot;View the slideshow for &quot; + data:post.title'>View Slideshow &#187;</a>
-		</span>
+		<data:post.snippet/>
 	</div>
 </b:includable>
     <b:includable id='status-message'>
@@ -1664,67 +1571,52 @@ head.appendChild(script);
     </div>
   </div>
 </b:includable>
-    <b:includable id='video-teaser' var='post'>
+
+
+
+<b:includable id='slideshow-teaser' var='post'>
+<!--Slideshow Teaser, Thumbnails-->
+  <div class='slideshow-teaser'>
+    <div class='content-type'><a href='http://mystady.com/search/label/slideshow' rel='category tag' title='View all slideshows'>slideshow</a></div>
+    <h2><a expr:href='data:post.url' expr:id='data:post.id' rel='bookmark' title='Permanent Link'><data:post.title/></a></h2>
+    <a expr:href='data:post.url'>
+      <b:loop values='data:post.enclosures' var='enclosure'>
+        <b:if cond='data:enclosure.mimeType in {&quot;image/jpeg&quot;,&quot;image/png&quot;}'>
+          <a expr:href='data:post.url' expr:title='&quot;Click to view &quot; + data:post.title'>
+            <img class='thumbnail' expr:alt='&quot;thumbnail - &quot; + data:post.title' expr:src='data:enclosure.url'/>
+          </a>
+        </b:if>
+      </b:loop>
+    </a>
+    <p class='snippet'><data:post.snippet/></p>
+  </div>
+</b:includable>
+<b:includable id='video-teaser' var='post'>
+<!--Video Teaser, Thumbnails-->
 	<div class='video-teaser'>
 		<div class='content-type'><a href='http://mystady.com/search/label/Video' rel='category tag' title='View all videos'>video</a></div>
 		<h2><a expr:href='data:post.url' expr:id='data:post.id' rel='bookmark' title='Permanent Link'><data:post.title/></a></h2>
 		<a expr:href='data:post.url' expr:title='&quot;Click to watch &quot; + data:post.title'>
-
-
-
-
-
-
-
-
-
-				<b:loop values='data:post.enclosures' var='enclosure'>
-					<b:if cond='data:enclosure.mimeType == &quot;video/mp4&quot;'>
-						<b:loop values='data:post.enclosures' var='enclosure'>
-							<b:if cond='data:enclosure.mimeType == &quot;image/png&quot;'>
-<!--MY STADY Video Thumbnails PNG-->
-									<img alt='thumbnail' expr:src='data:enclosure.url' expr:title='data:post.title'/>
-							<b:else/>
-								<b:if cond='data:enclosure.mimeType == &quot;image/jpeg&quot;'>
-<!--MY STADY Video Thumbnails JPG-->
-										<img alt='thumbnail' expr:src='data:enclosure.url' expr:title='data:post.title'/>
-								</b:if>
-							</b:if>
-						</b:loop>
-					</b:if>
-					<b:if cond='data:enclosure.mimeType == &quot;image/jpeg&quot;'>
-						<b:loop values='data:post.labels' var='label'>
-							<b:if cond='data:label.name == &quot;YouTube&quot;'>
-<!--YouTube Thumbnails-->
-									<img alt='thumbnail' expr:src='data:enclosure.url' expr:title='data:post.title'/>
-							</b:if>
-							<b:if cond='data:label.name == &quot;Hulu&quot;'>
-<!--Hulu Thumbnails-->
-									<img alt='thumbnail' expr:src='data:enclosure.url' expr:title='data:post.title'/>
-							</b:if>
-							<b:if cond='data:label.name == &quot;Veoh&quot;'>
-<!--Veoh Thumbnails-->
-									<img alt='thumbnail' expr:src='data:enclosure.url' expr:title='data:post.title' width='512'/>
-							</b:if>
-							<b:if cond='data:label.name == &quot;blip.tv&quot;'>
-<!--blip.tv Thumbnails-->
-									<img alt='thumbnail' expr:src='data:enclosure.url' expr:title='data:post.title'/>
-							</b:if>
-						</b:loop>
-					</b:if>
-				</b:loop>
-
-<span class='play'/>
-
-		</a>
-
-		<p class='snippet'>
-			<data:post.snippet/> <a expr:href='data:post.url' expr:title='&quot;View the video for &quot; + data:post.title'>Watch &#187;</a>
-		</p>
-
+			<b:loop values='data:post.enclosures' var='enclosure'>
+        <b:if cond='data:enclosure.mimeType in {&quot;image/jpeg&quot;,&quot;image/png&quot;}'>
+          <a expr:href='data:post.url' expr:title='&quot;Click to watch &quot; + data:post.title'>
+            <img class='thumbnail' expr:alt='&quot;thumbnail - &quot; + data:post.title' expr:src='data:enclosure.url'/>
+        	</a>
+        </b:if>
+			</b:loop>
+      <span class='play'/>
+    </a>
+    <p class='snippet'><data:post.snippet/></p>
 	</div>
 </b:includable>
-  </b:widget>
+
+
+
+</b:widget>
+
+
+
+
 </b:section>
 
 
@@ -1744,7 +1636,7 @@ head.appendChild(script);
 
 
 <b:section growth='vertical' id='sidebar' showaddelement='yes'>
-  <b:widget id='Text1' locked='false' title='Search' type='Text'>
+  <b:widget id='Text1' locked='false' title='Search' type='Text' mobile='yes'>
     <b:includable id='main'>
 <!-- Search -->
 	<ul>
@@ -1922,7 +1814,6 @@ head.appendChild(script);
   <b:widget id='Text2' locked='false' title='Social' type='Text'>
     <b:includable id='main'>
 	<b:if cond='data:title'><h3><data:title/></h3></b:if>
-<g:plus href='https://plus.google.com/101953722413647768451' size='smallbadge'/>
 <div id='fb-root'/><fb:like-box border_color='#FF0000' header='false' height='69' href='http://www.facebook.com/mystady' show_faces='false' stream='false' width='298'/>
 <a class='twitter-follow-button' href='https://twitter.com/mystady'>Follow @mystady</a>
 <style>.ig-b- { display: inline-block; }
@@ -1959,14 +1850,6 @@ head.appendChild(script);
 
 
 <b:if cond='data:blog.pageType == &quot;item&quot;'>
-<!--Plus One for Item Pages-->
-<script type='text/javascript'>
-  (function() {
-    var po = document.createElement(&#39;script&#39;); po.type = &#39;text/javascript&#39;; po.async = true;
-    po.src = &#39;https://apis.google.com/js/plusone.js&#39;;
-    var s = document.getElementsByTagName(&#39;script&#39;)[0]; s.parentNode.insertBefore(po, s);
-  })();
-</script>
 </b:if>
 
 
